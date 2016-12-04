@@ -15,9 +15,6 @@
   <div class="container">
     <form method="GET" action="showtimes.php" id="moviePicker">
       <div class="row">
-        <div class="col s12">
-          <h4>Results for "<?php echo $query; ?>"</h4>
-        </div>
 
       <?php
         $img_base = 'https://image.tmdb.org/t/p/w500';
@@ -26,6 +23,13 @@
           $movies_query = 'SELECT movies.id, title, summary, release_date, genre, genre_extra, rating, backdrop_url FROM movies
                           WHERE title LIKE "%' . $query . '%"
                           ORDER BY release_date DESC';
+
+          echo '  <div class="col s12">
+              <h4>Results for "<?php echo $query; ?>"</h4>
+            </div>
+          </div>
+
+          <div class="row">' . "\n";
         } else {
           $movies_query = 'SELECT movies.id, title, summary, release_date, genre, genre_extra, rating, backdrop_url
                           FROM movies ORDER BY release_date DESC';
