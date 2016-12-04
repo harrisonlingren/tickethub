@@ -45,10 +45,10 @@
             $the = $time['theater_id'];
             $sea = $time['available_seats'];
 
-            if( !$movies[$curr_movie]) {
-              $movies[$curr_movie] = new Showtime($mov, $dat, array(), $the, $sea);
+            if( !$movies[$mov]) {
+              $movies[$mov] = new Showtime($mov, $dat, array(), $the, $sea);
             }
-            array_push($movies[$curr_movie]->$times, $tim);
+            array_push($movies[$mov]->$times, $tim);
           }
 
           // spit out results for each movie
