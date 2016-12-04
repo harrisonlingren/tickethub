@@ -57,19 +57,21 @@
           echo '
 
           <h4>' . $showing->movie . '</h4>
-          <div class="collapsible" data-collapsible="expandable">';
+          <ul class="collapsible" data-collapsible="expandable">';
 
           foreach ($showing->times as $time) {
             echo '
-            <div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
-            <div class="collapsible-body">
-              <p>' . date('l, F d', strtotime($time)) . '<br />
-              Open seats: ' . $showing->open_seats . '
-              </p>
-              <a href="#" class="secondary-content">
-                <i class="material-icons">keyboard_arrow_right</i>
-              </a>
-            </div>';
+            <li>
+              <div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
+              <div class="collapsible-body">
+                <p>' . date('l, F d', strtotime($time)) . '<br />
+                Open seats: ' . $showing->open_seats . '
+                </p>
+                <a href="#" class="secondary-content">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+              </div>
+            </li>';
           }
 
           echo '
