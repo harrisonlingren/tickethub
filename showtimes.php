@@ -47,7 +47,7 @@
             $sea = $time['available_seats'];
 
             if( !array_key_exists($mov, $movies)) {
-              $movies[$mov] = new Movie($mov, $dat, array(), $the, $sea);
+              $movies[$mov] = new Movie($mov, array(), $the, $sea);
             }
             $movies[$mov]->addTime($formatted_time);
             print_r($movies);
