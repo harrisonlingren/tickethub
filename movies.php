@@ -3,6 +3,7 @@
 ?>
 
 <div class="container">
+  <div class="row">
 
   <?php
     $img_base = 'https://image.tmdb.org/t/p/w500';
@@ -22,7 +23,7 @@
         $count += 1;
 
         if($count % 3 == 0) {
-          echo '<div class="row">' . "\n";
+          echo '</div><div class="row">' . "\n";
         }
 
         echo '<div class="col s4">
@@ -40,14 +41,11 @@
             </div>
           </div>
         </div>' . "\n";
-
-        if($count % 3 == 0) {
-          echo '</div>';
-        }
       }
     }
   ?>
-
+  
+  </div>
 </div>
 
 <?php
