@@ -25,7 +25,7 @@
                           ORDER BY release_date DESC';
 
           echo '  <div class="col s12">
-              <h4>Results for "<?php echo $query; ?>"</h4>
+              <h4>Results for "' . $query .'"</h4>
             </div>
           </div>
 
