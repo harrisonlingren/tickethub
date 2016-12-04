@@ -4,7 +4,7 @@
 
 <main>
   <div class="container">
-    <form method="POST" action="tickets.php" id="moviePicker">
+    <form method="POST" action="showtimes.php" id="moviePicker">
       <div class="row">
 
       <?php
@@ -28,9 +28,9 @@
               $summary = $movie['summary'];
             }
 
-            if($count % 3 == 0) {
+            /*if($count % 3 == 0) {
               echo '</div><div class="row">' . "\n";
-            }
+            }*/
 
             echo '<div class="col s12 m6 l4">
               <div class="card medium">
