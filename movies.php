@@ -16,7 +16,7 @@
       while($movie = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
         $genres = $movie['genre'];
         if($movie['genre_extra']) {
-          $genres .= ', ' . $movies['genre_extra'];
+          $genres .= ', ' . $movie['genre_extra'];
         }
 
         $count += 1;
