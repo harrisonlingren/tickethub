@@ -29,10 +29,10 @@
           <div class="card large">
             <div class="card-image">
               <img src="' . $img_base . $movie['backdrop_url'] . '" />
-              <span class="card-title">' . $movie['title'] . '</span>
+              <span class="card-title"><h4>' . $movie['title'] . '</h4></span>
             </div>
             <div class="card-content">
-              <h3>' . $movie['rating'] . ' | ' . $genres . '</h3>
+              <h5>' . $movie['rating'] . ' | ' . $genres . '</h5>
               <p>' . $movie['summary'] . '</p>
             </div>
             <div class="card-action">
