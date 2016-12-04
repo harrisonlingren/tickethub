@@ -3,7 +3,7 @@
 ?>
 
 <div class="container">
-  <form action="tickets.php">
+  <form action="tickets.php" id="moviePicker">
     <div class="row">
 
     <?php
@@ -42,7 +42,7 @@
                 <p>' . $summary . '</p>
               </div>
               <div class="card-action">
-                <a href="#" onclick="' . "$('#movie_id').val('" . $movie['id'] . "')" . '">Tickets</a>
+                <a href="#" onclick="' . "goToMovie('" . $movie['id'] . "')" . '">Tickets</a>
               </div>
             </div>
           </div>' . "\n";
@@ -52,9 +52,16 @@
       }
     ?>
     </div>
-    <input type="hidden" value="" name="movie_id" id="movie_id" />
+    <input type="hidden" value="" name="movieId" id="movieId" />
   </form>
 </div>
+
+<script>
+  function goToMovie(id) {
+    $('#movieId').val(id);
+    $('#moviePicker').submit();
+  }
+</script>
 
 <?php
   include('includes/footer.php');
