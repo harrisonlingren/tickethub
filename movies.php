@@ -25,13 +25,13 @@
         }
 
         echo '<div class="col s12 m6 l4">
-          <div class="card large">
+          <div class="card medium">
             <div class="card-image">
               <img src="' . $img_base . $movie['backdrop_url'] . '" />
-              <span class="card-title"><h4>' . $movie['title'] . '</h4></span>
+              <span class="card-title">' . $movie['title'] . '</span>
             </div>
             <div class="card-content">
-              <h5>' . $movie['rating'] . ' | ' . $genres . '</h5>
+              <b>' . $movie['rating'] . ' | ' . $genres . '</b>
               <p>' . $movie['summary'] . '</p>
             </div>
             <div class="card-action">
