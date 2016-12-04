@@ -19,7 +19,6 @@
            <a href="index.php" class="brand-logo">TicketHub</a>
            <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
            <ul id="nav-mobile" class="right hide-on-med-and-down">
-             <li><h3 class="brand-logo">TicketHub</h3></li>
              <li><a href="movies.php">Movies</a></li>
              <li><a href="showtimes.php">Showtimes</a></li>
              <li><a href="about.php">About</a></li>
@@ -32,6 +31,7 @@
             </form></li>
            </ul>
            <ul class="side-nav" id="mobile-menu">
+             <li><h3 class="brand-logo grey-text text-darken-4">TicketHub</h3></li>
              <li><a class="waves-effect" href="movies.php">Movies</a></li>
              <li><a class="waves-effect" href="showtimes.php">Showtimes</a></li>
              <li><a class="waves-effect" href="about.php">About</a></li>
