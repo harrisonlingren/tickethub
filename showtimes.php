@@ -53,7 +53,7 @@
             //echo $movies[$mov]->$times;
             //print_r($movies[$mov]->$times);
             //array_push($movies[$mov]->$times, $tim);
-            $movies[$mov]->$addTime($tim);
+            $movies[$mov]->addTime($tim);
           }
 
           // spit out results for each movie
