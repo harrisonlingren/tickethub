@@ -31,7 +31,7 @@
             </form></li>
            </ul>
            <ul class="side-nav" id="mobile-menu">
-             <li><h3 class="brand-logo grey-text text-darken-4">TicketHub</h3></li>
+             <li><h5 class="grey-text text-darken-4">TicketHub</h5></li>
              <li><a class="waves-effect" href="movies.php">Movies</a></li>
              <li><a class="waves-effect" href="showtimes.php">Showtimes</a></li>
              <li><a class="waves-effect" href="about.php">About</a></li>
