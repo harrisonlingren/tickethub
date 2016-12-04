@@ -57,7 +57,7 @@
           echo '
 
           <h4>' . $showing->movie . '</h4>
-          <div class="collapsible">';
+          <div class="collapsible" data-collapsible="expandable">';
 
           foreach ($showing->times as $time) {
             echo '
