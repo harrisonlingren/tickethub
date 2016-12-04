@@ -51,7 +51,8 @@
             //echo $movies[$mov];
             //echo $movies[$mov]->$mov;
             //echo $movies[$mov]->$times;
-            array_push($movies[$mov]->$times, $tim);
+            print_r($movies[$mov]->$times);
+            //array_push($movies[$mov]->$times, $tim);
           }
 
           // spit out results for each movie
