@@ -7,5 +7,12 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/materialize.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $('.collapsible').collapsible();
+      });
+    </script>
+
   </body>
 </html>

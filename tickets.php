@@ -12,7 +12,7 @@
 ?>
 
 <div class="container">
-  <ul class="collection with-header">
+  <ul class="collection with-header collapsible" data-collapsible="expandable">
     <li class="collection-header"><h4>Available Showtimes</h4></li>
     <?php
       // if an ID was posted through, list showtimes for that movie.
@@ -26,14 +26,17 @@
       $exec_q = mysqli_query($dbc, $times_query);
       if($exec_q) {
         while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-          echo '<li class="collection-item">
-            <span class="title"><h5>' . date('g:i a', strtotime($time['time'])) . '</h5></span>
-            <p>' . date('l, F d', strtotime($time['date'])) . '<br />
-            Open seats: ' . $time['available_seats'] . '
-            </p>
-            <a href="#" class="secondary-content">
-              <i class="material-icons">keyboard_arrow_right</i>
-            </a>
+          echo '<li class="collapsible-item">
+
+            <div class="collapsible-header">' . date('g:i a', strtotime($time['time'])) . '</div>
+            <div class="collapsible-body">
+              <p>' . date('l, F d', strtotime($time['date'])) . '<br />
+              Open seats: ' . $time['available_seats'] . '
+              </p>
+              <a href="#" class="secondary-content">
+                <i class="material-icons">keyboard_arrow_right</i>
+              </a>
+            </div>
           </li>' . "\n";
         }
       } else {
