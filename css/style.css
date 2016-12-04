@@ -11,8 +11,8 @@ body {
   flex-direction: column;
 }
 
-nav {
-  margin-bottom: 20px;
+.nav-wrapper {
+  padding: 20px;
 }
 
 #sidenav-overlay {
