@@ -43,7 +43,7 @@
                   <p>' . $summary . '</p>
                 </div>
                 <div class="card-action">
-                  <a href="#" onclick="' . "goToMovie('" . $movie['id'] . "')" . '">Tickets</a>
+                  <a class="waves-effect" href="#" onclick="' . "goToMovie('" . $movie['id'] . "')" . '">Tickets</a>
                 </div>
               </div>
             </div>' . "\n";
