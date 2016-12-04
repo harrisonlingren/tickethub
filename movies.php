@@ -3,7 +3,7 @@
 ?>
 
 <div class="container">
-  <form action="tickets.php" id="moviePicker">
+  <form method="POST" action="tickets.php" id="moviePicker">
     <div class="row">
 
     <?php
