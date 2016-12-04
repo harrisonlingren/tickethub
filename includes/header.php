@@ -20,7 +20,7 @@
            <ul id="nav-mobile" class="right hide-on-med-and-down">
              <li><h3 class="brand-logo">TicketHub</h3></li>
              <li><a href="movies.php">Movies</a></li>
-             <li><a href="tickets.php">Showtimes</a></li>
+             <li><a href="showtimes.php">Showtimes</a></li>
              <li><a href="about.php">About</a></li>
              <li><form method="GET" action="movies.php">
               <div class="input-field">
@@ -32,7 +32,7 @@
            </ul>
            <ul class="side-nav" id="mobile-menu">
              <li><a class="waves-effect" href="movies.php">Movies</a></li>
-             <li><a class="waves-effect" href="tickets.php">Showtimes</a></li>
+             <li><a class="waves-effect" href="showtimes.php">Showtimes</a></li>
              <li><a class="waves-effect" href="about.php">About</a></li>
            </ul>
          </div>
