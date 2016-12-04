@@ -1,5 +1,15 @@
 <?php
   include('includes/header.php');
+
+  if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_SERVER['search']) {
+    $flag = TRUE;
+    $query = $_GET['search'];
+    echo 'Search query from previous page: ' . $query;
+  } else {
+    $flag = FALSE;
+    // echo 'Looks like you came here on your own. Hello!';
+    echo 'No search!';
+  }
 ?>
 
 <main>
@@ -10,9 +20,16 @@
       <?php
         $img_base = 'https://image.tmdb.org/t/p/w500';
 
-        $movies_query = "SELECT movies.id, title, summary, release_date, genre, genre_extra, rating, backdrop_url FROM movies ORDER BY release_date DESC";
-        $exec_q = mysqli_query($dbc, $movies_query);
+        if ($flag) {
+          $movies_query = 'SELECT movies.id, title, summary, release_date, genre, genre_extra, rating, backdrop_url FROM movies
+                          WHERE title LIKE "%' . $query . '%"
+                          ORDER BY release_date DESC';
+        } else {
+          $movies_query = 'SELECT movies.id, title, summary, release_date, genre, genre_extra, rating, backdrop_url
+                          FROM movies ORDER BY release_date DESC';
+        }
 
+        $exec_q = mysqli_query($dbc, $movies_query);
         $count = 0;
 
         if($exec_q) {

@@ -20,7 +20,7 @@
              <li><a href="movies">Movies</a></li>
              <li><a href="tickets.php">Showtimes</a></li>
              <li><a href="about.php">About</a></li>
-             <li><form>
+             <li><form method="GET" action="movies.php">
               <div class="input-field">
                 <input id="search" type="search" required>
                 <label for="search"><i class="material-icons">search</i></label>
