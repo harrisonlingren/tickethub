@@ -49,8 +49,8 @@
               $movies[$mov] = new Showtime($mov, $dat, array(), $the, $sea);
             }
             //echo $movies[$mov];
-            echo $movies[$mov]->$mov;
-            echo $movies[$mov]->$times;
+            //echo $movies[$mov]->$mov;
+            //echo $movies[$mov]->$times;
             array_push($movies[$mov]->$times, $tim);
           }
 
