@@ -20,6 +20,12 @@
           $genres .= ', ' . $movie['genre_extra'];
         }
 
+        if(strlen($movie['summary']) > 150) {
+          $summary = substr($movie['summary'], 0, 147) . '...';
+        } else {
+          $summary = $movie['summary'];
+        }
+
         if($count % 3 == 0) {
           echo '</div><div class="row">' . "\n";
         }
@@ -28,11 +34,11 @@
           <div class="card medium">
             <div class="card-image">
               <img src="' . $img_base . $movie['backdrop_url'] . '" />
-              <span class="card-title">' . $movie['title'] . '</span>
+              <span class="card-title"><h5>' . $movie['title'] . '</h5></span>
             </div>
             <div class="card-content">
               <b>' . $movie['rating'] . ' | ' . $genres . '</b>
-              <p>' . $movie['summary'] . '</p>
+              <p>' . $summary . '</p>
             </div>
             <div class="card-action">
               <a href="#">Tickets</a>
