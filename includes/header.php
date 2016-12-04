@@ -1,5 +1,5 @@
 <?php
-  include('error_report.php');
+  // include('error_report.php');
   include('db_connect.php');
 ?>
 
