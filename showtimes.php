@@ -54,7 +54,9 @@
 
         // spit out results for each movie
         foreach ($movies as $showing) {
-          echo '<h4>' . $showing->movie . '</h4>
+          echo '
+
+          <h4>' . $showing->movie . '</h4>
           <div class="collapsible">';
 
           foreach ($showing->times as $time) {
