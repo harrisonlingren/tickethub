@@ -58,13 +58,13 @@
 
           // spit out results for each movie
           foreach ($movies as $showing) {
-            echo '<li class="collection-header"><h4>' . $showing->$title . '</h3></li>';
+            echo '<li class="collection-header"><h4>' . $showing->title . '</h3></li>';
 
-            foreach ($showing->$times as $time) {
+            foreach ($showing->times as $time) {
               '<div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
               <div class="collapsible-body">
-                <p>' . date('l, F d', strtotime($showing->$date)) . '<br />
-                Open seats: ' . $showing->$open_seats . '
+                <p>' . date('l, F d', strtotime($showing->date)) . '<br />
+                Open seats: ' . $showing->open_seats . '
                 </p>
                 <a href="#" class="secondary-content">
                   <i class="material-icons">keyboard_arrow_right</i>
