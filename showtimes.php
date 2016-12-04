@@ -55,10 +55,11 @@
         // spit out results for each movie
         foreach ($movies as $showing) {
           echo '<h4>' . $showing->movie . '</h4>
-              <div class="collapsible">' . "\n";
+              <div class="collapsible">';
 
           foreach ($showing->times as $time) {
-            echo '<div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
+            echo '
+            <div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
               <div class="collapsible-body">
                 <p>' . date('l, F d', strtotime($time)) . '<br />
                 Open seats: ' . $showing->open_seats . '
