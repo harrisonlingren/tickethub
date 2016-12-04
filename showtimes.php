@@ -13,7 +13,7 @@
 
 <main>
   <div class="container">
-    <ul class="collection with-header collapsible" data-collapsible="expandable">
+    <ul class="collection with-header">
       <li class="collection-header"><h3>Available Showtimes</h3></li>
 
       <?php
@@ -56,20 +56,30 @@
 
           // spit out results for each movie
           foreach ($movies as $showing) {
-            echo '<li class="collection-header"><h4>' . $showing->movie . '</h3></li>';
+            echo '<li class="collection-item">
+              <div class="collapsible" data-collapsible="accordian">
+                <div class="collapsible-header">
+                  <h4>' . $showing->movie . '</h4>
+                </div>
+                <div class="collapsible-body">
+                  <div class="collapsible" data-collapsible="expandable">' . "\n";
 
             foreach ($showing->times as $time) {
-              '<div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
-              <div class="collapsible-body">
-                <p>' . date('l, F d', strtotime($time)) . '<br />
-                Open seats: ' . $showing->open_seats . '
-                </p>
-                <a href="#" class="secondary-content">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                </a>
-              </div>
-            </li>' . "\n";
+              echo '<div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
+                <div class="collapsible-body">
+                  <p>' . date('l, F d', strtotime($time)) . '<br />
+                  Open seats: ' . $showing->open_seats . '
+                  </p>
+                  <a href="#" class="secondary-content">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                  </a>
+                </div>' . "\n";
             }
+
+            echo '      </div>
+                </div>
+              </div>
+            </li>';
           }
         } else {
           echo "No showtimes found!";
