@@ -16,20 +16,22 @@
       <div class="navbar-fixed">
         <nav>
          <div class="nav-wrapper">
-           <a href="index.php" class="brand-logo">TicketHub</a>
-           <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
-           <ul id="nav-mobile" class="right hide-on-med-and-down">
-             <li><a href="movies.php">Movies</a></li>
-             <li><a href="showtimes.php">Showtimes</a></li>
-             <li><a href="about.php">About</a></li>
-             <li><form method="GET" action="movies.php">
-              <div class="input-field">
-                <input id="search" name="search" type="search" required>
-                <label for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-              </div>
-            </form></li>
-           </ul>
+           <div class="col s12">
+             <a href="index.php" class="brand-logo">TicketHub</a>
+             <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+             <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li><a href="movies.php">Movies</a></li>
+               <li><a href="showtimes.php">Showtimes</a></li>
+               <li><a href="about.php">About</a></li>
+               <li><form method="GET" action="movies.php">
+                <div class="input-field">
+                  <input id="search" name="search" type="search" required>
+                  <label for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form></li>
+             </ul>
+           </div>
            <ul class="side-nav" id="mobile-menu">
              <li><h5 class="grey-text text-darken-4">TicketHub</h5></li>
              <li><a class="waves-effect" href="movies.php">Movies</a></li>
