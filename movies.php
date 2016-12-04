@@ -20,8 +20,6 @@
           $genres .= ', ' . $movie['genre_extra'];
         }
 
-        $count += 1;
-
         if($count % 3 == 0) {
           echo '</div><div class="row">' . "\n";
         }
@@ -41,10 +39,12 @@
             </div>
           </div>
         </div>' . "\n";
+
+        $count += 1;
       }
     }
   ?>
-  
+
   </div>
 </div>
 
