@@ -53,11 +53,12 @@
             //echo $movies[$mov]->$times;
             print_r($movies[$mov]->$times);
             //array_push($movies[$mov]->$times, $tim);
+            $movies[$mov]->$addTime($tim);
           }
 
           // spit out results for each movie
           foreach ($movies as $showing) {
-            echo '<li class="collection-header"><h4>' . $showing->$movie . '</h3></li>';
+            echo '<li class="collection-header"><h4>' . $showing->$title . '</h3></li>';
 
             foreach ($showing->$times as $time) {
               '<div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
