@@ -1,12 +1,12 @@
 <?php
 
-  class Showtime {
+  class Movie {
     public $title = '';
     public $times = array();
     public $theater = '';
     public $open_seats = '';
 
-    function __contsruct($m, $d, $t, $c, $s) {
+    function __contsruct($m, $t, $c, $s) {
       $this->movie = $m;
       $this->date = $d;
       if(!is_array($t)) {

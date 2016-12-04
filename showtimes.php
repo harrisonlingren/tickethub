@@ -42,18 +42,19 @@
             $mov = $time['movie_id'];
             $dat = $time['date'];
             $tim = $time['time'];
+            $formatted_time = $dat . ' ' . $tim;
             $the = $time['theater_id'];
             $sea = $time['available_seats'];
 
             if( !array_key_exists($mov, $movies)) {
-              $movies[$mov] = new Showtime($mov, $dat, array(), $the, $sea);
+              $movies[$mov] = new Movie($mov, $dat, array(), $the, $sea);
             }
             //echo $movies[$mov];
             //echo $movies[$mov]->$mov;
             //echo $movies[$mov]->$times;
             //print_r($movies[$mov]->$times);
             //array_push($movies[$mov]->$times, $tim);
-            $movies[$mov]->addTime($tim);
+            $movies[$mov]->addTime($formatted_time);
           }
 
           // spit out results for each movie
@@ -63,7 +64,7 @@
             foreach ($showing->times as $time) {
               '<div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
               <div class="collapsible-body">
-                <p>' . date('l, F d', strtotime($showing->date)) . '<br />
+                <p>' . date('l, F d', strtotime($time)) . '<br />
                 Open seats: ' . $showing->open_seats . '
                 </p>
                 <a href="#" class="secondary-content">
