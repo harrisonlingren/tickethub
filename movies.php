@@ -1,7 +1,7 @@
 <?php
   include('includes/header.php');
 
-  if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_SERVER['search']) {
+  if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['search']) {
     $flag = TRUE;
     $query = $_GET['search'];
     echo 'Search query from previous page: ' . $query;

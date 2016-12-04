@@ -1,7 +1,7 @@
 <?php
   include('includes/header.php');
 
-  if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_SERVER['movieId']) {
+  if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['movieId']) {
     $flag = TRUE;
     $movie = $_GET['movieId'];
     // echo 'Movie ID from previous page: ' . $movie;
