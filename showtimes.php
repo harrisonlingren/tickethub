@@ -51,7 +51,7 @@
             }
             $movies[$mov]->addTime($formatted_time);
             print_r($movies);
-            print_r($movies[$mov]->times);
+            //print_r($movies[$mov]->times);
           }
 
           // spit out results for each movie
