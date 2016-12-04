@@ -42,7 +42,7 @@
                 <p>' . $summary . '</p>
               </div>
               <div class="card-action">
-                <a onclick="' . "$('#movie_id').val('" . $movie['id'] . "')" . '">Tickets</a>
+                <a href="#" onclick="' . "$('#movie_id').val('" . $movie['id'] . "')" . '">Tickets</a>
               </div>
             </div>
           </div>' . "\n";
