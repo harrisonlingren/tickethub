@@ -45,7 +45,7 @@
             $the = $time['theater_id'];
             $sea = $time['available_seats'];
 
-            if( !$movies[$mov]) {
+            if( !array_key_exists($mov, $movies)) {
               $movies[$mov] = new Showtime($mov, $dat, array(), $the, $sea);
             }
             echo $movies[$mov];
