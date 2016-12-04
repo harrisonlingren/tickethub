@@ -1,7 +1,7 @@
 <?php
 
   class Movie {
-    public $title = '';
+    public $movie = '';
     public $times = array();
     public $theater = '';
     public $open_seats = '';
