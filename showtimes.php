@@ -39,11 +39,11 @@
           foreach ($results as $time) {
             // $curr_movie = $time['movie_id'];
 
-            $mov = $results['movie_id'];
-            $dat = $results['date'];
-            $tim = $results['time'];
-            $the = $results['theater_id'];
-            $sea = $results['available_seats'];
+            $mov = $time['movie_id'];
+            $dat = $time['date'];
+            $tim = $time['time'];
+            $the = $time['theater_id'];
+            $sea = $time['available_seats'];
 
             if( !$movies[$curr_movie]) {
               $movies[$curr_movie] = new Showtime($mov, $dat, array(), $the, $sea);
