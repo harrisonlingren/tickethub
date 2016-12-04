@@ -29,7 +29,9 @@
 
     <script>
       $(document).ready(function(){
-        $('.collapsible').collapsible();
+        $('.collapsible').collapsible({
+          accordion : true;
+        });
         $('.button-collapse').sideNav();
       });
     </script>
