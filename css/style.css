@@ -14,3 +14,7 @@ body {
 nav {
   margin-bottom: 20px;
 }
+
+#sidenav-overlay {
+  left: 300;
+}
