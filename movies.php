@@ -14,6 +14,11 @@
 
     if($exec_q) {
       while($movie = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
+        $genres = $movie['genre'];
+        if($movie['genre_extra']) {
+          $genres .= ', ' . $movies['genre_extra'];
+        }
+
         $count += 1;
 
         if($count % 3 == 0) {
@@ -27,7 +32,7 @@
               <span class="card-title">' . $movie['title'] . '</span>
             </div>
             <div class="card-content">
-              <h3>' . $movie['rating'] . ' | ' . $movie['genres'] . '</h3>
+              <h3>' . $movie['rating'] . ' | ' . $genres . '</h3>
               <p>' . $movie['summary'] . '</p>
             </div>
             <div class="card-action">
