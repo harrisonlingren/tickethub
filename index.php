@@ -4,7 +4,7 @@
 
 <main>
   <div class="container">
-    <form method="POST" action="showtimes.php" id="moviePicker">
+    <form method="GET" action="showtimes.php" id="moviePicker">
       <div class="row">
 
       <?php

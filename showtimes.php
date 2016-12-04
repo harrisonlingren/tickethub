@@ -1,9 +1,9 @@
 <?php
   include('includes/header.php');
 
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_SERVER['movieId']) {
     $flag = TRUE;
-    $movie = $_POST['movieId'];
+    $movie = $_GET['movieId'];
     // echo 'Movie ID from previous page: ' . $movie;
   } else {
     $flag = FALSE;
