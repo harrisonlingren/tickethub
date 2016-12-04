@@ -70,7 +70,8 @@
               </div>';
           }
 
-          echo '</div>';
+          echo '
+          </div>';
         }
       } else {
         echo "No showtimes found!";
