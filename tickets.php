@@ -36,6 +36,8 @@
             </a>
           </li>' . "\n";
         }
+      } else {
+        echo "No showtimes found!";
       }
     ?>
   </ul>
