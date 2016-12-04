@@ -4,7 +4,6 @@
   if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['search']) {
     $flag = TRUE;
     $query = $_GET['search'];
-    echo 'Search query from previous page: ' . $query;
   } else {
     $flag = FALSE;
     // echo 'Looks like you came here on your own. Hello!';
@@ -16,6 +15,9 @@
   <div class="container">
     <form method="GET" action="showtimes.php" id="moviePicker">
       <div class="row">
+        <div class="col s12">
+          <h4>Results for "<?php echo $query; ?>"</h4>
+        </div>
 
       <?php
         $img_base = 'https://image.tmdb.org/t/p/w500';
