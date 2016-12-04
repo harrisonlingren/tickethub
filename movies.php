@@ -24,7 +24,7 @@
           echo '</div><div class="row">' . "\n";
         }
 
-        echo '<div class="col s4">
+        echo '<div class="col s12 m6 l4">
           <div class="card large">
             <div class="card-image">
               <img src="' . $img_base . $movie['backdrop_url'] . '" />
