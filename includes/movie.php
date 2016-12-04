@@ -8,7 +8,6 @@
 
     function Movie($m, $t, $c, $s) {
       $this->movie = $m;
-      $this->date = $d;
       if(!is_array($t)) {
         throw new Exception("Illegal argument: $t");
       } else {
