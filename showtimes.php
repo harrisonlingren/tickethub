@@ -15,7 +15,7 @@
   <div class="container">
     <h3>Available Showtimes</h3>
     <div class="collapsible" data-collapsible="accordian">
-      
+
     <?php
       // if an ID was posted through, list showtimes for that movie.
       // otherwise, list all showtimes by date
@@ -50,8 +50,7 @@
             $movies[$mov] = new Movie($mov, array(), $the, $sea);
           }
           $movies[$mov]->addTime($formatted_time);
-          print_r($movies);
-          //print_r($movies[$mov]->times);
+          //print_r($movies);
         }
 
         // spit out results for each movie
