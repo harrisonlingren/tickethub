@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <meta name="viewport" content="width=device-width">
+    <title>TicketHub</title>
   </head>
   <body>
     <header>
