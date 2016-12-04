@@ -28,7 +28,7 @@
         while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
           echo '<li class="collection-item">
             <span class="title"><h5>' . date('g:i a', strtotime($time['time'])) . '</h5></span>
-            <p>' . date('l, M-d-Y', strtotime($time['date'])) . '<br />
+            <p>' . date('l, F d', strtotime($time['date'])) . '<br />
             Open seats: ' . $time['available_seats'] . '
             </p>
             <a href="#" class="secondary-content">
