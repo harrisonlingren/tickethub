@@ -1,4 +1,3 @@
-
     <footer class="page-footer">
       <div class="container">
             <div class="row">
@@ -9,9 +8,9 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Site Map</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Movies</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Showtimes</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="movies.php">Movies</a></li>
+                  <li><a class="grey-text text-lighten-3" href="showtimes.php">Showtimes</a></li>
+                  <li><a class="grey-text text-lighten-3" href="about.php">About</a></li>
                 </ul>
               </div>
             </div>
