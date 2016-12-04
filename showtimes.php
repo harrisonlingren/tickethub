@@ -14,7 +14,9 @@
 <main>
   <div class="container">
     <ul class="collection with-header">
-      <li class="collection-header"><h3>Available Showtimes</h3></li>
+      <h3>Available Showtimes</h3>
+      <div class="collapsible" data-collapsible="accordian">
+
 
       <?php
         // if an ID was posted through, list showtimes for that movie.
@@ -56,8 +58,7 @@
 
           // spit out results for each movie
           foreach ($movies as $showing) {
-            echo '<li class="collection-item">
-              <div class="collapsible" data-collapsible="accordian">
+            echo '
                 <div class="collapsible-header">
                   <h4>' . $showing->movie . '</h4>
                 </div>
@@ -78,8 +79,7 @@
 
             echo '      </div>
                 </div>
-              </div>
-            </li>';
+              </div>' . "\n";
           }
         } else {
           echo "No showtimes found!";
