@@ -4,10 +4,10 @@
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $flag = TRUE;
     $movie = $_POST['movieId'];
-    echo 'Movie ID from previous page: ' . $movie;
+    // echo 'Movie ID from previous page: ' . $movie;
   } else {
     $flag = FALSE;
-    echo 'Looks like you came here on your own. Hello!';
+    // echo 'Looks like you came here on your own. Hello!';
   }
 ?>
 
