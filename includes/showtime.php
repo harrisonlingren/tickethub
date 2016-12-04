@@ -19,7 +19,7 @@
     }
 
     function addTime($time) {
-      array_push($this->$times, $time);
+      array_push($this->times, $time);
     }
   }
 
