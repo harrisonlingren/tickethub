@@ -14,7 +14,7 @@
 <main>
   <div class="container">
     <h3>Available Showtimes</h3>
-    <div class="collapsible" data-collapsible="accordian">
+    <div class="collapsible">
 
     <?php
       // if an ID was posted through, list showtimes for that movie.
