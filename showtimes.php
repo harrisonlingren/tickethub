@@ -18,11 +18,11 @@
     <?php
       // if an ID was posted through, list showtimes for that movie.
       // otherwise, list all showtimes by date
-      $times_query = "SELECT movie_id, showings.date, showings.time, theater_id, available_seats FROM showings ORDER BY showings.time ASC";
-
+      $times_query = "SELECT movie_id, showings.date, showings.time, theater_id, available_seats FROM showings";
       if($flag) {
          $times_query .= " WHERE movie_id = $movie";
       }
+      $times_query .= "  ORDER BY showings.time ASC";
 
       $results = array();
       $exec_q = mysqli_query($dbc, $times_query);
