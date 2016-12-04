@@ -23,6 +23,8 @@
          $times_query .= "WHERE movie_id = $movie";
       }
 
+      echo $times_query;
+
       $exec_q = mysqli_query($dbc, $times_query);
       if($exec_q) {
         while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
