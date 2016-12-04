@@ -26,7 +26,7 @@
       $exec_q = mysqli_query($dbc, $times_query);
       if($exec_q) {
         while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-          echo '<li class="collapsible-item">
+          echo '<li class="collapsible-item collection-item">
 
             <div class="collapsible-header">' . date('g:i a', strtotime($time['time'])) . '</div>
             <div class="collapsible-body">
