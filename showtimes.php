@@ -14,36 +14,69 @@
 <main>
   <div class="container">
     <ul class="collection with-header collapsible" data-collapsible="expandable">
-      <li class="collection-header"><h4>Available Showtimes</h4></li>
+      <li class="collection-header"><h3>Available Showtimes</h3></li>
 
       <?php
         // if an ID was posted through, list showtimes for that movie.
         // otherwise, list all showtimes by date
-        $times_query = "SELECT showings.date, showings.time, theater_id, available_seats FROM showings";
+        $times_query = "SELECT showings.date, showings.time, theater_id, available_seats FROM showings ORDER BY showings.time ASC";
 
         if($flag) {
            $times_query .= " WHERE movie_id = $movie";
         }
 
+        $results = array();
         $exec_q = mysqli_query($dbc, $times_query);
         if($exec_q) {
+          // load results to memory
           while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-            echo '<li class="collapsible-item">
+            array_push($results, $time);
+          }
 
-              <div class="collapsible-header">' . date('g:i a', strtotime($time['time'])) . '</div>
+          $movies = array();
+
+          // iterate through cached rows, add array for each movie and add times to movie arrays
+          foreach ($results as $time) {
+            // $curr_movie = $time['movie_id'];
+
+            $mov = $results['movie_id'];
+            $dat = $results['date'];
+            $tim = $results['time'];
+            $the = $results['theater_id'];
+            $sea = $results['available_seats'];
+
+            if( !$movies[$curr_movie]) {
+              $movies[$curr_movie] = new Showtime($mov, $dat, array(), $the, $sea);
+            }
+            array_push($movies[$curr_movie]->$times, $tim);
+          }
+
+          // spit out results for each movie
+          foreach ($movies as $showing) {
+            echo '<li class="collection-header"><h4>' . $showing->$movie . '</h3></li>';
+
+            foreach ($showing->$times as $time) {
+              '<div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
               <div class="collapsible-body">
-                <p>' . date('l, F d', strtotime($time['date'])) . '<br />
-                Open seats: ' . $time['available_seats'] . '
+                <p>' . date('l, F d', strtotime($showing->$date)) . '<br />
+                Open seats: ' . $showing->$open_seats . '
                 </p>
                 <a href="#" class="secondary-content">
                   <i class="material-icons">keyboard_arrow_right</i>
                 </a>
               </div>
             </li>' . "\n";
+            }
           }
         } else {
           echo "No showtimes found!";
         }
+
+        /*
+
+        */
+
+
       ?>
     </ul>
   </div>
