@@ -20,7 +20,7 @@
       $times_query = "SELECT showings.date, showings.time, theater_id, available_seats FROM showings";
 
       if($flag) {
-         $times_query .= "WHERE movie_id = $movie";
+         $times_query .= " WHERE movie_id = $movie";
       }
 
       echo $times_query;
