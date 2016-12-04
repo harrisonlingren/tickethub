@@ -15,7 +15,7 @@
     <header>
       <nav>
        <div class="nav-wrapper">
-         <a href="/#" class="brand-logo">TicketHub</a>
+         <a href="index.php" class="brand-logo">TicketHub</a>
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <li><a href="movies">Movies</a></li>
            <li><a href="tickets.php">Showtimes</a></li>
