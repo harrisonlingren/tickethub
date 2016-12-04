@@ -22,7 +22,7 @@
         $count += 1;
 
         if($count % 3 == 0) {
-          echo '<div class="row">';
+          echo '<div class="row">' . "\n";
         }
 
         echo '<div class="col s4>"
@@ -39,7 +39,7 @@
               <a href="#">Tickets</a>
             </div>
           </div>
-        </div>';
+        </div>' . "\n";
 
         if($count % 3 == 0) {
           echo '</div>';
