@@ -19,8 +19,8 @@
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © 2016 Harrison Lingren
+            <a class="grey-text text-lighten-4 right" href="http://harrison.lingren.co">harrison.lingren.co</a>
             </div>
           </div>
     </footer>
