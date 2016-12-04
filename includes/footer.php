@@ -30,7 +30,7 @@
     <script>
       $(document).ready(function(){
         $('.collapsible').collapsible();
-         $('.button-collapse').sideNav();
+        $('.button-collapse').sideNav();
       });
     </script>
 
