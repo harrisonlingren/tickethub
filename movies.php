@@ -6,8 +6,7 @@
     $query = $_GET['search'];
   } else {
     $flag = FALSE;
-    // echo 'Looks like you came here on your own. Hello!';
-    echo 'No search!';
+    // echo 'No search!';
   }
 ?>
 
