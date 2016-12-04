@@ -23,18 +23,16 @@
          $times_query .= " WHERE movie_id = $movie";
       }
 
-      echo $times_query;
-
       $exec_q = mysqli_query($dbc, $times_query);
       if($exec_q) {
         while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
           echo '<li class="collection-item">
-            <span class="title">' . $time['time'] . '</span>
+            <span class="title"><h5>' . $time['time'] . '</h5></span>
             <p>' . $time['date'] . ', ' . $time['date'] . '<br />
             Open seats: ' . $time['available_seats'] . '
             </p>
             <a href="#" class="secondary-content">
-              <i class="material-icons">keyboard arrow right</i>
+              <i class="material-icons">keyboard_arrow_right</i>
             </a>
           </li>' . "\n";
         }
