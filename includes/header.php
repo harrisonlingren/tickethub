@@ -22,11 +22,6 @@
              <li><a href="movies.php">Movies</a></li>
              <li><a href="tickets.php">Showtimes</a></li>
              <li><a href="about.php">About</a></li>
-           </ul>
-           <ul class="side-nav" id="mobile-menu">
-             <li><a class="waves-effect" href="movies.php">Movies</a></li>
-             <li><a class="waves-effect" href="tickets.php">Showtimes</a></li>
-             <li><a class="waves-effect" href="about.php">About</a></li>
              <li><form method="GET" action="movies.php">
               <div class="input-field">
                 <input id="search" name="search" type="search" required>
@@ -34,6 +29,11 @@
                 <i class="material-icons">close</i>
               </div>
             </form></li>
+           </ul>
+           <ul class="side-nav" id="mobile-menu">
+             <li><a class="waves-effect" href="movies.php">Movies</a></li>
+             <li><a class="waves-effect" href="tickets.php">Showtimes</a></li>
+             <li><a class="waves-effect" href="about.php">About</a></li>
            </ul>
          </div>
        </nav>
