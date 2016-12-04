@@ -30,12 +30,12 @@
 
             <div class="collapsible-header">' . date('g:i a', strtotime($time['time'])) . '</div>
             <div class="collapsible-body">
-              <p>' . date('l, F d', strtotime($time['date'])) . '<br />
-              Open seats: ' . $time['available_seats'] . '
-              </p>
               <a href="#" class="secondary-content">
                 <i class="material-icons">keyboard_arrow_right</i>
               </a>
+              <p>' . date('l, F d', strtotime($time['date'])) . '<br />
+              Open seats: ' . $time['available_seats'] . '
+              </p>
             </div>
           </li>' . "\n";
         }
