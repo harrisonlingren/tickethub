@@ -6,7 +6,7 @@
     public $theater = '';
     public $open_seats = '';
 
-    function __contsruct($m, $t, $c, $s) {
+    function Movie($m, $t, $c, $s) {
       $this->movie = $m;
       $this->date = $d;
       if(!is_array($t)) {

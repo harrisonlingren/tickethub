@@ -1,7 +1,7 @@
 <?php
   include('error_report.php');
   include('db_connect.php');
-  include('showtime.php');
+  include('movie.php');
 ?>
 
 <html>
