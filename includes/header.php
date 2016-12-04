@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width">
   </head>
   <body>
-
     <header>
       <div class="navbar-fixed">
         <nav>
@@ -21,13 +20,13 @@
              <li><a href="movies">Movies</a></li>
              <li><a href="tickets.php">Showtimes</a></li>
              <li><a href="about.php">About</a></li>
-             <form>
+             <li><form>
               <div class="input-field">
                 <input id="search" type="search" required>
                 <label for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
               </div>
-            </form>
+            </form></li>
            </ul>
          </div>
        </nav>
