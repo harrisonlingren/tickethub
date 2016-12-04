@@ -13,6 +13,21 @@
   <body>
 
     <header>
-      <!-- header content here -->
-      <h5 class="white-text">Title here</h5>
+      <nav>
+       <div class="nav-wrapper">
+         <a href="#" class="brand-logo">Logo</a>
+         <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <li><a href="movies">Movies</a></li>
+           <li><a href="tickets.php">Showtimes</a></li>
+           <li><a href="about.php">About</a></li>
+           <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+         </ul>
+       </div>
+     </nav>
     </header>
