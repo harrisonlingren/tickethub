@@ -75,7 +75,7 @@
           }
 
           echo '
-          </div>';
+          </ul>';
         }
       } else {
         echo "No showtimes found!";
