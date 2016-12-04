@@ -49,12 +49,8 @@
             if( !array_key_exists($mov, $movies)) {
               $movies[$mov] = new Movie($mov, $dat, array(), $the, $sea);
             }
-            //echo $movies[$mov];
-            //echo $movies[$mov]->$mov;
-            //echo $movies[$mov]->$times;
-            //print_r($movies[$mov]->$times);
-            //array_push($movies[$mov]->$times, $tim);
             $movies[$mov]->addTime($formatted_time);
+            print_r($movies);
             print_r($movies[$mov]->times);
           }
 
