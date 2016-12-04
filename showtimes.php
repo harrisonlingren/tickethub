@@ -55,6 +55,7 @@
             //print_r($movies[$mov]->$times);
             //array_push($movies[$mov]->$times, $tim);
             $movies[$mov]->addTime($formatted_time);
+            print_r($movies[$mov]->times);
           }
 
           // spit out results for each movie
