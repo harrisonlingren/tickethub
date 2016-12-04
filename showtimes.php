@@ -56,9 +56,7 @@
         // spit out results for each movie
         foreach ($movies as $showing) {
           echo '
-              <div class="collapsible-header">
-                <h4>' . $showing->movie . '</h4>
-              </div>
+              <div class="collapsible-header"><h4>' . $showing->movie . '</h4></div>
               <div class="collapsible-body">
                 <div class="collapsible" data-collapsible="expandable">' . "\n";
 
@@ -74,9 +72,8 @@
               </div>' . "\n";
           }
 
-          echo '      </div>
-              </div>
-            </div>' . "\n";
+          echo '            </div>
+          </div>' . "\n";
         }
       } else {
         echo "No showtimes found!";
