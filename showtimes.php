@@ -14,7 +14,6 @@
 <main>
   <div class="container">
     <h3>Available Showtimes</h3>
-    <div class="collapsible">
 
     <?php
       // if an ID was posted through, list showtimes for that movie.
@@ -55,8 +54,8 @@
 
         // spit out results for each movie
         foreach ($movies as $showing) {
-          echo '<div class="collapsible-header>"<h4>' . $showing->movie . '</h4></div>
-              <div class="collapsible-body">' . "\n";
+          echo '"<h4>' . $showing->movie . '</h4>
+              <div class="collapsible">';
 
           foreach ($showing->times as $time) {
             echo '<div class="collapsible-header">' . date('g:i a', strtotime($time)) . '</div>
@@ -67,12 +66,11 @@
                 <a href="#" class="secondary-content">
                   <i class="material-icons">keyboard_arrow_right</i>
                 </a>
-              </div>' . "\n";
+              </div>';
           }
 
-          echo '</div>' . "\n";
+          echo '</div>';
         }
-        echo '</div>';
       } else {
         echo "No showtimes found!";
       }
