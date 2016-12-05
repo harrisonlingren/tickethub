@@ -43,3 +43,15 @@
        </nav>
       </div>
     </header>
+
+    <?php
+      $MOVIE_TITLES = array();
+      $get_query = 'SELECT movies.id, title, summary, release_date, genre, genre_extra, rating, backdrop_url
+                      FROM movies ORDER BY movies.id';
+      $exec_q = mysqli_query($dbc, $get_query);
+      if ($exec_q) {
+        while ($movie = mysql_fetch_array($exec_q, MYSQLI_ASSOC)) {
+          $MOVIE_TITLES[$movie['id']] = $movie['title'];
+        }
+      }
+    ?>
