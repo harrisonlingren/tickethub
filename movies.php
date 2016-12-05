@@ -1,9 +1,9 @@
 <?php
   include('includes/header.php');
 
-  if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['search']) {
+  if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['q']) {
     $flag = TRUE;
-    $query = $_GET['search'];
+    $query = $_GET['q'];
   } else {
     $flag = FALSE;
     // echo 'No search!';
