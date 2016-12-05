@@ -5,19 +5,24 @@
 <main>
   <div class="container">
     <div class="row">
+      <div class="col s12">
+        <h3>Home</h3>
+      </div>
+    </div>
+    <div class="row">
       <div class="col s12 m4">
         <div class="card-panel">
-          <h3>Now Playing</h3>
+          <a href="movies.php"><h4>Now Playing</h4></a>
         </div>
       </div>
       <div class="col s12 m4">
         <div class="card-panel">
-          <h3>Showtimes</h3>
+          <a href="showtimes.php"><h4>Showtimes</h4></a>
         </div>
       </div>
       <div class="col s12 m4">
         <div class="card-panel">
-          <h3>About</h3>
+          <a href="showtimes.php"><h4>About</h4></a>
         </div>
       </div>
     </div>
