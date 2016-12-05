@@ -22,7 +22,7 @@
       if($flag) {
          $times_query .= " WHERE movie_id = $movie";
       }
-      $times_query .= "  ORDER BY showings.time ASC";
+      $times_query .= "  ORDER BY showings.date ASC";
 
       $results = array();
       $exec_q = mysqli_query($dbc, $times_query);
