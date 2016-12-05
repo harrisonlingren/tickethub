@@ -58,7 +58,7 @@
               <div class="card medium">
                 <div class="card-image">
                   <img src="' . $img_base . $movie['backdrop_url'] . '" />
-                  <span class="card-title"><h5>' . $MOVIE_TITLES[$movie['title']] . '</h5></span>
+                  <span class="card-title"><h5>' . $movie['title'] . '</h5></span>
                 </div>
                 <div class="card-content">
                   <b>' . $movie['rating'] . ' | ' . $genres . '</b>
