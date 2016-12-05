@@ -50,7 +50,7 @@
                       FROM movies ORDER BY movies.id';
       $exec_q = mysqli_query($dbc, $get_query);
       if ($exec_q) {
-        while ($movie = mysql_fetch_array($exec_q, MYSQLI_ASSOC)) {
+        while ($movie = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
           $MOVIE_TITLES[$movie['id']] = $movie['title'];
         }
       }
