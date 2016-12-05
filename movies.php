@@ -64,8 +64,8 @@
                   <b>' . $movie['rating'] . ' | ' . $genres . '</b>
                   <p>' . $summary . '</p>
                 </div>
-                <div class="card-action waves-effect">
-                  <a href="#" onclick="' . "goToMovie('" . $movie['id'] . "')" . '">Tickets</a>
+                <div class="card-action waves-effect" onclick="' . "goToMovie('" . $movie['id'] . "')" . '">
+                  <a>Tickets</a>
                 </div>
               </div>
             </div>' . "\n";
