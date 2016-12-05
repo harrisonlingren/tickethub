@@ -56,7 +56,7 @@
         foreach ($movies as $title => $showing) {
           echo '
 
-          <h4>' . $title . '</h4>
+          <h4>' . $MOVIE_TITLES[$title] . '</h4>
           <ul class="collapsible" data-collapsible="expandable">';
 
           foreach ($showing as $s) {
