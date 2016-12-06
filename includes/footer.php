@@ -31,6 +31,8 @@
       $(document).ready(function(){
         $('.collapsible').collapsible();
         $('.button-collapse').sideNav();
+        $('ul.tabs').tabs();
+        $('li.tab').first().addClass('active');
       });
     </script>
 

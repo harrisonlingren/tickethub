@@ -16,82 +16,105 @@
     <h3>Available Showtimes</h3>
 
     <?php
-      // if an ID was posted through, list showtimes for that movie.
-      // otherwise, list all showtimes by date
-      $times_query = "SELECT movie_id, showings.date, showings.time, theater_id, available_seats FROM showings";
-      if($flag) {
-         $times_query .= " WHERE movie_id = $movie";
+      // initialize array of upcoming dates
+      $dates = array();
+      $dates_query = "SELECT DISTINCT showings.date FROM showings ORDER BY showings.date ASC";
+      $exec_q = mysqli_query($dbc, $dates_query);
+      if ($exec_q) {
+        while ($date = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
+          array_push($dates, $date);
+        }
       }
-      $times_query .= "  ORDER BY showings.date ASC";
-
-      $results = array();
-      $exec_q = mysqli_query($dbc, $times_query);
-      if($exec_q) {
-        // load results to memory
-        while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-          array_push($results, $time);
-        }
-
-        $movies = array();
-
-        // iterate through cached rows, add array for each movie and add times to movie arrays
-        foreach ($results as $time) {
-          // $curr_movie = $time['movie_id'];
-
-          $mov = $time['movie_id'];
-          $dat = $time['date'];
-          $tim = $time['time'];
-          $formatted_time = $dat . ' ' . $tim;
-          $the = $time['theater_id'];
-          $sea = $time['available_seats'];
-
-          if( !array_key_exists($mov, $movies)) {
-            $movies[$mov] = array();
-          }
-          array_push($movies[$mov], new Showtime($formatted_time, $the, $sea));
-          //print_r($movies);
-        }
-
-        // spit out results for each movie
-        foreach ($movies as $title => $showing) {
-          echo '
-
-          <h4>' . $MOVIE_TITLES[$title] . '</h4>
-          <ul class="collapsible" data-collapsible="expandable">';
-
-          foreach ($showing as $s) {
-            echo '
-            <li>
-              <div class="collapsible-header">' . date('g:i a', strtotime($s->time)) . '</div>
-              <div class="collapsible-body">
-                <p>' . date('l, F d', strtotime($s->time)) . '<br />
-                Theater: ' . $s->theater . '<br />
-                Open seats: ' . $s->open_seats . '
-                </p>
-                <a href="#" class="secondary-content">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                </a>
-              </div>
-            </li>';
-          }
-
-          echo '
-          </ul>';
-        }
-      } else {
-        echo "No showtimes found!";
-      }
-
-      /*
-
-      */
-
-
+      // build tabs to navigate between days
     ?>
-    </ul>
+
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs tabs-fixed-width">
+          <?php
+            for ($i=1; $i<=7; $i++) {
+              echo '<li class="tab" onclick="goToTab(' . $i . ')">
+                <a href="#day' . $i . '">' . date('l, F d', strtotime($dates[$i])) . '</a>
+              </li>';
+            }
+          ?>
+        </ul>
+      </div>
+    </div>
+
+    <?php
+      // if an ID was posted through, list showtimes for that movie for selected date.
+      // otherwise, get showtimes for the next 7 days sorted by time
+      for ($i=1; $i<=7; $i++) {
+        $loop_date = $dates[$i];
+        $times_query = "SELECT movie_id, showings.time, theater_id, available_seats FROM showings WHERE showings.date = $loop_date";
+        if($flag) {
+           $times_query .= " AND WHERE movie_id = $movie";
+        }
+        $times_query .= "  ORDER BY showings.time ASC";
+
+        $results = array();
+        $exec_q = mysqli_query($dbc, $times_query);
+        if($exec_q) {
+          // load results to memory
+          while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
+            array_push($results, $time);
+          }
+
+          echo '<div id="day' . $i . '">';
+
+          // iterate through cached rows, add array for each movie and add times to movie arrays
+          $movies = array();
+          foreach ($results as $time) {
+            // $curr_movie = $time['movie_id'];
+
+            $mov = $time['movie_id'];
+            $dat = $loop_date;
+            $tim = $time['time'];
+            $formatted_time = $dat . ' ' . $tim;
+            $the = $time['theater_id'];
+            $sea = $time['available_seats'];
+
+            if( !array_key_exists($mov, $movies)) {
+              $movies[$mov] = array();
+            }
+            array_push($movies[$mov], new Showtime($formatted_time, $the, $sea));
+            //print_r($movies);
+          }
+
+          // spit out results for each movie
+          foreach ($movies as $title => $showing) {
+            echo '
+
+            <h4>' . $MOVIE_TITLES[$title] . '</h4>
+            <ul class="collapsible" data-collapsible="expandable">';
+
+            foreach ($showing as $s) {
+              echo '
+              <li>
+                <div class="collapsible-header">' . date('g:i a', strtotime($s->time)) . '</div>
+                <div class="collapsible-body">
+                  <p>' . date('l, F d', strtotime($s->time)) . '<br />
+                  Theater: ' . $s->theater . '<br />
+                  Open seats: ' . $s->open_seats . '
+                  </p>
+                  <a href="#" class="secondary-content">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                  </a>
+                </div>
+              </li>';
+            }
+
+            echo '
+            </ul>';
+          }
+        } else {
+          echo "No showtimes found!";
+        }
+        echo '</div>';
+      }
+    ?>
   </div>
 </main>
 
-<?php
-  include('includes/footer.php');
-?>
+<?php include('includes/footer.php'); ?>
