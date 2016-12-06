@@ -49,7 +49,7 @@
         $loop_date = $dates[$i-1];
         $times_query = "SELECT movie_id, showings.time, theater_id, available_seats FROM showings WHERE showings.date = '$loop_date'";
         if($flag) {
-           $times_query .= " AND WHERE movie_id = $movie";
+           $times_query .= " AND movie_id = $movie";
         }
         $times_query .= "  ORDER BY showings.time ASC";
 
