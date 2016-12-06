@@ -34,7 +34,7 @@
           <?php
             for ($i=1; $i<=7; $i++) {
               echo '<li class="tab" onclick="goToTab(' . $i . ')">
-                <a href="#day' . $i . '">' . date('l, F d', strtotime($dates[$i])) . '</a>
+                <a href="#day' . $i . '">' . date('l, F d', strtotime($dates[$i-1])) . '</a>
               </li>';
             }
           ?>
