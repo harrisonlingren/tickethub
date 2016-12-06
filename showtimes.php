@@ -22,7 +22,7 @@
       $exec_q = mysqli_query($dbc, $dates_query);
       if ($exec_q) {
         while ($date = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-          array_push($dates, $date);
+          array_push($dates, $date['date']);
         }
       }
       // build tabs to navigate between days
