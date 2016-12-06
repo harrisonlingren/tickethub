@@ -47,13 +47,13 @@
       // otherwise, get showtimes for the next 7 days sorted by time
       for ($i=1; $i<=7; $i++) {
         $loop_date = $dates[$i-1];
-        $times_query = "SELECT movie_id, showings.time, theater_id, available_seats FROM showings WHERE showings.date = $loop_date";
+        $times_query = "SELECT movie_id, showings.time, theater_id, available_seats FROM showings WHERE showings.date = '$loop_date'";
         if($flag) {
            $times_query .= " AND WHERE movie_id = $movie";
         }
         $times_query .= "  ORDER BY showings.time ASC";
 
-        echo $times_query;
+        //echo $times_query;
 
         $results = array();
         $exec_q = mysqli_query($dbc, $times_query);
