@@ -53,6 +53,8 @@
         }
         $times_query .= "  ORDER BY showings.time ASC";
 
+        echo $times_query;
+
         $results = array();
         $exec_q = mysqli_query($dbc, $times_query);
         if($exec_q) {
