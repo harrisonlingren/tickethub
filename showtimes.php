@@ -108,10 +108,10 @@
             echo '
             </ul>';
           }
+          echo '</div>';
         } else {
           echo "No showtimes found!";
         }
-        echo '</div>';
       }
     ?>
   </div>
