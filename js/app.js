@@ -2,6 +2,7 @@
 
 // reveal showtimes for the selected day
 function goToTab(day) {
+  console.log("Showing div for day " + day + "!");
   switch (day) {
     case 1:
       $('#day1').show();
