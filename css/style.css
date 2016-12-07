@@ -30,7 +30,7 @@ footer.page-footer {
 
 .center-div {
   display: block;
-  margin: inherit auto;
+  margin: 0 auto;
 }
 
 .side-nav > li > h5 {
