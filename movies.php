@@ -16,13 +16,11 @@
   </a>
   <ul>
     <li class="waves-effect waves-light">
-      <form method="GET" action="movies.php">
-       <div class="input-field">
-         <input id="search" name="q" type="search" placeholder="Enter a movie title!" required>
-         <label for="search"><i class="material-icons">search</i></label>
-         <i class="material-icons">close</i>
-       </div>
-     </form>
+    <form method="GET" action="movies.php">
+      <input id="search" name="q" type="search" placeholder="Enter a movie title!" required>
+      <label for="search"><i class="material-icons">search</i></label>
+      <i class="material-icons">close</i>
+    </form>
     </li>
   </ul>
 </div>
