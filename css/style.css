@@ -19,6 +19,10 @@ footer.page-footer {
   left: 300;
 }
 
+.primary-color {
+  color: #ee6e73;
+}
+
 @media screen and (min-width: 992px) {
   .brand-logo {
     margin-left: 20px;
