@@ -3,7 +3,7 @@
     echo '<script>window.location = "https://blue.butler.edu/~hlingren/CME419/tickethub/login.php";</script>';
   } else {
     $userID = $_SESSION['userID'];
-    $user_q = "SELECT firstname, lastname, email FROM users WHERE users.id = ''$userID'";
+    $user_q = "SELECT firstname, lastname, email FROM users WHERE users.id = '$userID'";
 
     $exec_q = mysqli_query($dbc, $user_q);
     if ($exec_q) {
