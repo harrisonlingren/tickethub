@@ -32,7 +32,13 @@
       $exec_q = mysqli_query($dbc, $q) or die('Could not look up user information; ' . mysqli_error($dbc));
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $_SESSION['userID'] = $user;
-      echo $_SESSION['userID'];
+
+      // handle redirect
+      if (isset($_GET['redirect'])) {
+        $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub/' . $_GET['redirect'] . '.php';
+        echo "<script>window.location.redirect('$newPath');</script>";
+      }
+
     } else {
       $message = 'Incorrect email or password!';
       echo "<script>Materialize.toast('$message', 4000)</script>";
