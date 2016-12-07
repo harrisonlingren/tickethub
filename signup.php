@@ -40,7 +40,7 @@ if ($logged_in) {
         </div>
         <div class="row">
           <div class="col s12">
-            <button class="btn orange accent-2 waves-effect waves-light" type="submit">Sign Up</button>
+            <button class="btn orange accent-2 waves-effect waves-light center-div" type="submit">Sign Up</button>
           </div>
         </div>
       </form>
