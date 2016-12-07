@@ -6,7 +6,7 @@
     $q = "SELECT email, password FROM users
           WHERE email='$email' and password='$pwdmd5'";
 
-    $result = mysqli_query($q, $dbc);
+    $result = mysqli_query($dbc, $q);
 
     if(!$result || mysqli_fetch_array($result, MYSQLI_ASSOC) <= 0) {
       return false;
