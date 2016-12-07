@@ -21,7 +21,10 @@
   <div class="container">
     <form method="GET" action="showtimes.php" id="moviePicker">
       <div class="row">
+        <h3>Now Playing</h3>
+      </div>
 
+      <div class="row">
       <?php
         $img_base = 'https://image.tmdb.org/t/p/w500';
 
