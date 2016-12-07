@@ -31,7 +31,7 @@
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $_SESSION['userID'] = $user['id'];
 
-      $logged_in = true;
+      //$logged_in = true;
 
       // handle redirect
       if (isset($_GET['redirect'])) {
