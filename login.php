@@ -77,12 +77,12 @@
           </div>
         </div>
         <div class="row">
-          <div class="col s2">
+          <div class="col s6">
             <button class="btn orange accent-2 waves-effect waves-light center-div" type="submit">Login</button>
           </div>
-          <div class="col s2">
+          <div class="col s6">
             <button class="btn orange accent-2 waves-effect waves-light center-div" onclick="location.href='signup.php';">Sign Up</button>
-          </div>          
+          </div>
         </div>
       </form>
     </div>
