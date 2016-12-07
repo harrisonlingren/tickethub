@@ -1,4 +1,4 @@
-<?php include('includes/db_connect.php');
+<?php include('includes/header.php');
   function CheckLoginInDB($email, $password, $dbc) {
     $pwdmd5 = md5($password);
     $q = "SELECT id, email, password FROM users
@@ -18,35 +18,39 @@
     return $id;
   }
 
-  if ($_SERVER['REQUEST_METHOD'] == "POST" && ($_POST['email'] !== null) && ($_POST['password'] !== null)) {
-    $email = $_POST['email'];
-    $pass = $_POST['password'];
+  if (!$logged_in) {
+    if ($_SERVER['REQUEST_METHOD'] == "POST" && ($_POST['email'] !== null) && ($_POST['password'] !== null)) {
+      $email = $_POST['email'];
+      $pass = $_POST['password'];
 
-    $trial = CheckLoginInDB($email, $pass, $dbc);
-    echo "Login result: " . $trial;
+      $trial = CheckLoginInDB($email, $pass, $dbc);
+      echo "Login result: " . $trial;
 
-    if ($trial) {
-      $q = "SELECT id FROM users WHERE email='$email'";
-      $exec_q = mysqli_query($dbc, $q) or die('Could not look up user information; ' . mysqli_error($dbc));
-      $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
-      $_SESSION['userID'] = $user['id'];
+      if ($trial) {
+        $q = "SELECT id FROM users WHERE email='$email'";
+        $exec_q = mysqli_query($dbc, $q) or die('Could not look up user information; ' . mysqli_error($dbc));
+        $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
+        $_SESSION['userID'] = $user['id'];
 
-      //$logged_in = true;
+        //$logged_in = true;
 
-      // handle redirect
-      if (isset($_GET['redirect'])) {
-        $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub/' . $_GET['redirect'] . '.php';
+        // handle redirect
+        if (isset($_GET['redirect'])) {
+          $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub/' . $_GET['redirect'] . '.php';
+        } else {
+          $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub';
+        } echo "<script>window.location = '$newPath';</script>";
+
       } else {
-        $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub';
-      } echo "<script>window.location = '$newPath';</script>";
-
-    } else {
-      $message = 'Incorrect email or password!';
-      echo "<script>Materialize.toast('$message', 4000)</script>";
+        $message = 'Incorrect email or password!';
+        echo "<script>Materialize.toast('$message', 4000)</script>";
+      }
     }
+  } else {
+    echo '<h3>Already logged in! Redirecting...</h3>';
+    echo "<script>window.location = 'http://blue.butler.edu/~hlingren/CME419/tickethub'</script>";
   }
-
-  include('includes/header.php'); ?>
+?>
 
 <main>
   <div class="container">
