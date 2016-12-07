@@ -26,7 +26,7 @@
     } else {
       echo '<h1>LE FAIL!</h1>';
       $message = '<span class="red darken-1">Incorect email or password!</span>';
-      echo "<script>Materialize.toast($message, 4000)</script>";
+      echo "<script>Materialize.toast('$message', 4000)</script>";
     }
   }
 ?>
