@@ -16,7 +16,7 @@ if ($logged_in) {
       <form class="col s12" action="signup.php" method="POST">
         <div class="row">
           <div class="col s1 m2 l3">
-            <i class="material-icons large primary-red">person</i>
+            <i class="material-icons large red-icon">person</i>
           </div>
           <div class="input-field col s11 l9 l7">
             <input id="firstname" name="firstname" type="text" class="validate">
@@ -25,7 +25,7 @@ if ($logged_in) {
         </div>
         <div class="row">
           <div class="col s1 m2 l3">
-            <i class="material-icons large primary-red">person</i>
+            <i class="material-icons large red-icon">person</i>
           </div>
           <div class="input-field col s11 m9 l7">
             <input id="lastname" name="lastname" type="text" class="validate">
@@ -34,7 +34,7 @@ if ($logged_in) {
         </div>
         <div class="row">
           <div class="col s1 m2 l3">
-            <i class="material-icons large primary-red">email</i>
+            <i class="material-icons large red-icon">email</i>
           </div>
           <div class="input-field col s11 m9 l7">
             <input id="email" type="email" class="validate">
@@ -43,7 +43,7 @@ if ($logged_in) {
         </div>
         <div class="row">
           <div class="col s1 m2 l3">
-            <i class="material-icons large primary-red">lock</i>
+            <i class="material-icons large red-icon">lock</i>
           </div>
           <div class="input-field col s11 m9 l7">
             <input id="password" type="password" class="validate">
