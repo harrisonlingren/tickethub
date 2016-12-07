@@ -46,7 +46,7 @@
                <li><a href="showtimes.php">Showtimes</a></li>
                <li><a href="about.php">About</a></li>
              </ul>
-             <ul class="">
+             <ul class="right hide-on-med-and-down">
                <?php
                 if ($logged_in) {
                   echo '<li><a href="account.php">My Account</a></li>';
