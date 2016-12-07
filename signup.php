@@ -31,10 +31,8 @@ if ($logged_in) {
           </div>
         </div>
         <div class="row">
-          <div class="col s2">
-            <i class="material-icons">lock</i>
-          </div>
           <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
+            <i class="material-icons">lock</i>
             <input id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
