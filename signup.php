@@ -16,7 +16,7 @@ if ($logged_in) {
             <i class="material-icons large">person</i>
           </div>
           <div class="input-field col s5">
-            <input placeholder="Placeholder" id="firstname" name="firstname" type="text" class="validate">
+            <input id="firstname" name="firstname" type="text" class="validate">
             <label for="firstname">First Name</label>
           </div>
           <div class="input-field col s5">
