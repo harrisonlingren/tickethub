@@ -31,7 +31,7 @@
       $q = "SELECT id FROM users WHERE email='$email'";
       $exec_q = mysqli_query($dbc, $q) or die('Could not look up user information; ' . mysqli_error($dbc));
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
-      $_SESSION['userID'] = $user;
+      $_SESSION['userID'] = $user['id'];
 
       // handle redirect
       if (isset($_GET['redirect'])) {
