@@ -22,11 +22,6 @@
             </div>
           </div>
     </footer>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/materialize.min.js"></script>
-
     <script>
       $(document).ready(function(){
         $('.collapsible').collapsible();
