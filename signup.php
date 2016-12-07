@@ -10,7 +10,11 @@ if ($logged_in) {
   <main>
   <div class="container">
 
-    <h3>Sign up for a TicketHub account</h3>
+    <div class="row">
+      <div class="col s12 m8 l6 offset-m2 offset-m4">
+        <h3>Sign up for a TicketHub account</h3>
+      </div>
+    </div>
 
     <div class="row card-panel">
       <form action="signup.php" method="POST">
@@ -39,7 +43,7 @@ if ($logged_in) {
           </div>
         </div>
         <div class="row">
-          <div class="col s12">
+          <div class="col s2 offset-s5">
             <button class="btn orange accent-2 waves-effect waves-light center-div" type="submit">Sign Up</button>
           </div>
         </div>

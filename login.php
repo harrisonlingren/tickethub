@@ -56,8 +56,8 @@
   <div class="container">
 
     <div class="row">
-      <div class="col s12">
-        <h3>Login</h3>
+      <div class="col s12 m8 l6 offset-m2 offset-m4">
+        <h3>Log in to your account</h3>
       </div>
     </div>
 
@@ -76,7 +76,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col s12">
+          <div class="col col s2 offset-s5">
             <button class="btn orange accent-2 waves-effect waves-light center-div" type="submit">Login</button>
           </div>
         </div>
