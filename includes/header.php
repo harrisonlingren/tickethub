@@ -38,6 +38,15 @@
                <li><a href="movies.php">Movies</a></li>
                <li><a href="showtimes.php">Showtimes</a></li>
                <li><a href="about.php">About</a></li>
+               <?php
+                if ($logged_in) {
+                  echo '<li><a href="account.php">Account</a></li>';
+                  echo '<li><a href="logout.php">Logout</a></li>';
+                } else {
+                  echo '<li><a href="login.php">Login</a></li>';
+                  echo '<li><a href="signup.php">Sign Up</a></li>';
+                }
+               ?>
                <li><form method="GET" action="movies.php">
                 <div class="input-field">
                   <input id="search" name="q" type="search" required>
