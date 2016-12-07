@@ -56,7 +56,7 @@
              <hr />
              <?php
               if ($logged_in) {
-                echo '<li><a href="account.php" class="waves-effect">My Account</a></li>';
+                echo '<li><a href="account.php" class="waves-effect">Account</a></li>';
                 echo '<li><a href="logout.php" class="waves-effect">Logout</a></li>';
               } else {
                 echo '<li><a href="login.php" class="waves-effect">Login</a></li>';
