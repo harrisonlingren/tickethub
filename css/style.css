@@ -24,6 +24,10 @@ footer.page-footer {
   color: #ee6e73 !important;
 }
 
+.primary-red {
+  background-color: #ee6e73;
+}
+
 .side-nav > li > h5 {
   text-align: center;
   color: #ee6e73;

@@ -54,6 +54,11 @@
             <label for="password">Password</label>
           </div>
         </div>
+        <div class="row">
+          <div class="col s12">
+            <button class="btn waves-effect waves-light primary-red" type="submit">Login</button>
+          </div>
+        </div>
       </form>
     </div>
 
