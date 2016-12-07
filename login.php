@@ -6,6 +6,8 @@
     $q = "SELECT email, password FROM users
           WHERE email='$email' and password='$pwdmd5'";
 
+    echo $q;
+
     $result = mysqli_query($dbc, $q);
 
     if(!$result || mysqli_fetch_array($result, MYSQLI_ASSOC) <= 0) {
@@ -20,13 +22,16 @@
 
     if (CheckLoginInDB($email, $pass)) {
       $q = "SELECT id FROM users WHERE email='$email'";
+
+      echo $q;
+
       $exec_q = mysqli_query($q, $dbc);
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $_SESSION['user'] = $user;
     } else {
       echo '<h1>LE FAIL!</h1>';
       echo md5($pass);
-      $message = 'Incorect email or password!';
+      $message = 'Incorrect email or password!';
       echo "<script>Materialize.toast('$message', 4000)</script>";
     }
   }
