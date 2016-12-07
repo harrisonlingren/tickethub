@@ -20,7 +20,10 @@
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
-    if (CheckLoginInDB($email, $pass)) {
+    $trial = CheckLoginInDB($email, $pass);
+    echo $trial;
+
+    if ($trial) {
       $q = "SELECT id FROM users WHERE email='$email'";
 
       echo $q;
