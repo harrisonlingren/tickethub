@@ -12,7 +12,9 @@
 
     if($result) {
       $id = mysqli_fetch_array($result, MYSQLI_ASSOC);
+      echo $id;
     } else {
+      echo 'nope...';
       return null;
     }
     return $id;
