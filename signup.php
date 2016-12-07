@@ -15,7 +15,7 @@ if ($logged_in) {
     <div class="row">
       <form class="col s12" action="signup.php" method="POST">
         <div class="row">
-          <div class="col s1 m2 l3 offset-m1 offset-l2">
+          <div class="col s1 m2 l3">
             <i class="material-icons large primary-red">person</i>
           </div>
           <div class="input-field col s11 l9 l7">
@@ -24,30 +24,28 @@ if ($logged_in) {
           </div>
         </div>
         <div class="row">
-          <div class="col s1 m2 l3 offset-m1 offset-l2">
+          <div class="col s1 m2 l3">
             <i class="material-icons large primary-red">person</i>
           </div>
-          <div class="input-field col s10 m8 l6">
+          <div class="input-field col s11 m9 l7">
             <input id="lastname" name="lastname" type="text" class="validate">
             <label for="lastname">Last Name</label>
           </div>
         </div>
         <div class="row">
-          <div class="col s1 m2 l3 offset-m1 offset-l2">
+          <div class="col s1 m2 l3">
             <i class="material-icons large primary-red">email</i>
           </div>
-          <div class="input-field col s12 m10 l8">
-            <i class="material-icons">email</i>
+          <div class="input-field col s11 m9 l7">
             <input id="email" type="email" class="validate">
             <label for="email">Email</label>
           </div>
         </div>
         <div class="row">
-          <div class="col s1 m2 l3 offset-m1 offset-l2">
+          <div class="col s1 m2 l3">
             <i class="material-icons large primary-red">lock</i>
           </div>
-          <div class="input-field col s12 m10 l8">
-            <i class="material-icons">lock</i>
+          <div class="input-field col s11 m9 l7">
             <input id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
