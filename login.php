@@ -31,8 +31,8 @@
       $q = "SELECT id FROM users WHERE email='$email'";
       $exec_q = mysqli_query($dbc, $q) or die('Could not look up user information; ' . mysqli_error($dbc));
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
-      $_SESSION['user'] = $user;
-      echo $_SESSION['user'];
+      $_SESSION['userID'] = $user;
+      echo $_SESSION['userID'];
     } else {
       $message = 'Incorrect email or password!';
       echo "<script>Materialize.toast('$message', 4000)</script>";
