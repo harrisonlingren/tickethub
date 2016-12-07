@@ -77,7 +77,7 @@
         </div>
         <div class="row">
           <div class="col s12">
-            <button class="btn red lighten-1 waves-effect waves-light center-div" type="submit">Login</button>
+            <button class="btn orange accent-2 waves-effect waves-light center-div" type="submit">Login</button>
           </div>
         </div>
       </form>
