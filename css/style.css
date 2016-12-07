@@ -20,7 +20,7 @@ footer.page-footer {
 }
 
 .action-call, .action-call > a {
-  color: #ee6e73;
+  color: #ee6e73 !important;
 }
 
 @media screen and (min-width: 992px) {
