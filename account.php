@@ -32,24 +32,12 @@
 
     <div class="row">
 
-      <div class="card-panel col s12 m6 l4">
-        So many account options
+      <div class="card-panel col s12 m6 l4 offset-l2">
+        View my orders
       </div>
 
-      <div class="card-panel col s12 m6 l4">
-        Oh yeah
-      </div>
-
-      <div class="card-panel col s12 m6 l4">
-        Real cool
-      </div>
-
-      <div class="card-panel col s12 m6 l4">
-        Very robust
-      </div>
-
-      <div class="card-panel col s12 m6 l4">
-        Another one!
+      <div class="card-panel col s12 m6 l4 offset-l2">
+        View account information
       </div>
 
 
