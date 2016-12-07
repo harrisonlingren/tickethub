@@ -32,7 +32,7 @@
         <nav>
          <div class="nav-wrapper">
            <div class="col s12">
-             <a href="index.php" class="brand-logo-center">TicketHub</a>
+             <a href="index.php" class="brand-logo center">TicketHub</a>
              <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
              <ul class="left hide-on-med-and-down">
                <li><form method="GET" action="movies.php">
