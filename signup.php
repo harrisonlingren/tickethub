@@ -46,7 +46,7 @@ if ($logged_in) {
           </div>
         </div>
         <div class="row">
-          <div class="col s2 offset-5">
+          <div class="col s12 center-div">
             <button class="btn orange accent-2 waves-effect waves-light" type="submit">Sign Up</button>
           </div>
         </div>
