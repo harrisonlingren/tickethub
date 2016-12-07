@@ -29,7 +29,7 @@
       <div class="col s12 l4">
         <div class="card-panel">
           <a href="about.php">
-            <i class="material-icons large orange-text accent-2">info</i>
+            <i class="material-icons large orange-text   accent-2">info</i>
             <h4 class="grey-text darken-4">About Us</h4>
           </a>
         </div>

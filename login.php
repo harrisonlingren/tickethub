@@ -34,8 +34,6 @@
       $_SESSION['user'] = $user;
       echo $_SESSION['user'];
     } else {
-      echo '<h1>LE FAIL!</h1>';
-      echo md5($pass);
       $message = 'Incorrect email or password!';
       echo "<script>Materialize.toast('$message', 4000)</script>";
     }
