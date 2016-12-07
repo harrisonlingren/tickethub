@@ -1,6 +1,7 @@
 <?php include('includes/header.php');
   function CheckLoginInDB($email, $password, $dbc) {
     $pwdmd5 = md5($password);
+    echo $pwdmd5;
     $q = "SELECT id, email, password FROM users
           WHERE email='$email' and password='$pwdmd5'";
 
