@@ -10,19 +10,11 @@
   }
 ?>
 
-<div class="fixed-action-btn toolbar">
-  <a class="btn-floating btn-large orange accent-2">
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large orange accent-2 toolbar" data-target="searchModal">
     <i class="large material-icons">search</i>
   </a>
-  <ul>
-    <li class="waves-effect waves-light">
-    <form method="GET" action="movies.php">
-      <input id="search" name="q" type="search" placeholder="Enter a movie title!" required>
-      <label for="search"><i class="material-icons">search</i></label>
-      <i class="material-icons">close</i>
-    </form>
-    </li>
-  </ul>
 </div>
 
 <main>
@@ -94,6 +86,20 @@
     </form>
   </div>
 </main>
+
+<div id="searchModal" class="modal bottom-sheet">
+  <div class="modal-content">
+    <h4>Enter a movie title to search!</h4>
+    <form method="GET" action="movies.php">
+     <div class="input-field">
+       <input id="search" name="q" type="search" required>
+       <label for="search"><i class="material-icons">search</i></label>
+       <i class="material-icons">close</i>
+     </div>
+   </form>
+  </div>
+
+</div>
 
 <script>
   function goToMovie(id) {
