@@ -24,7 +24,7 @@
       $pass = $_POST['password'];
 
       $trial = CheckLoginInDB($email, $pass, $dbc);
-      echo "Login result: " . $trial;
+      echo "<h3>Logged in! Redirecting...</h3>";
 
       if ($trial) {
         $q = "SELECT id FROM users WHERE email='$email'";
