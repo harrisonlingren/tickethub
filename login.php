@@ -1,11 +1,10 @@
 <?php
   include('includes/header.php');
 
-  function CheckLoginInDB($username,$password) {
+  function CheckLoginInDB($email, $password) {
     $pwdmd5 = md5($password);
-    $qry = "Select name, email from $this->tablename ".
-        " where username='$username' and password='$pwdmd5' ".
-        " and confirmcode='y'";
+    $q = "SELECT email, password FROM users
+          WHERE email='$email' and password='$pwdmd5'";
 
     $result = mysql_query($q, $dbc);
 
