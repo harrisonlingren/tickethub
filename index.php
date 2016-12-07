@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="row action-call">
-      <div class="col s12 m8 offset-m2 l4">
+      <div class="col s12 m8 l4">
         <div class="card-panel">
           <a href="movies.php">
             <i class="material-icons large orange-text accent-2">movie</i>

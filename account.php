@@ -13,7 +13,7 @@
     </div>
 
     <div class="row action-call">
-      <div class="col s12 m6 l4 offset-l2">
+      <div class="col s12 m6 l4 ">
         <div class="card-panel">
           <a href="orders.php">
             <i class="material-icons large">receipt</i>
@@ -21,7 +21,7 @@
           </a>
         </div>
       </div>
-      <div class="col s12 m6 l4 offset-l2">
+      <div class="col s12 m6 l4 ">
         <div class="card-panel">
           <a href="my-info.php">
             <i class="material-icons large">account_info</i>
