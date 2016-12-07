@@ -56,7 +56,7 @@
   <div class="container">
 
     <div class="row">
-      <div class="col s12 m8 l6 offset-m2 offset-m4">
+      <div class="col s12 m10 l8 offset-m1 offset-l2">
         <h3>Log in to your account</h3>
       </div>
     </div>
