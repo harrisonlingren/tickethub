@@ -1,18 +1,18 @@
 <?php
   include('includes/header.php');
 
-  function CheckLoginInDB($email, $password) {
+  function CheckLoginInDB($email, $password, $dbc) {
     $pwdmd5 = md5($password);
     $q = "SELECT id, email, password FROM users
           WHERE email='$email' and password='$pwdmd5'";
 
     echo $q;
 
-    $result = mysqli_query($dbc, $q);
+    $exec_q = mysqli_query($dbc, $q);
 
-    if($result) {
-      $id = mysqli_fetch_array($result, MYSQLI_ASSOC);
-      echo $id;
+    if($exec_q) {
+      $result = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
+      echo $id['id'];
     } else {
       echo 'nope...';
       return null;
@@ -24,7 +24,7 @@
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
-    $trial = CheckLoginInDB($email, $pass);
+    $trial = CheckLoginInDB($email, $pass, $dbc);
     echo "Login result: " . $trial;
 
     if ($trial) {
