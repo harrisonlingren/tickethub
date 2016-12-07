@@ -8,7 +8,8 @@
   session_start();
 
   // check if logged in and set flag
-  echo $_SESSION['userID'];
+  //echo $_SESSION['userID'];
+  print_r($_SESSION['userID']);
   if ( isset($_SESSION['userID']) ) {
     $logged_in = true;
   } else {
