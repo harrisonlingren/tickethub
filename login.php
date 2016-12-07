@@ -33,7 +33,7 @@
       echo "\nQuery : $q";
       //echo "\ndbc : $dbc";
 
-      $exec_q = mysqli_query($q, $dbc) or die('Could not look up user information; ' . mysqli_error($dbc));
+      $exec_q = mysqli_query($dbc, $q) or die('Could not look up user information; ' . mysqli_error($dbc));
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $_SESSION['user'] = $user;
     } else {
