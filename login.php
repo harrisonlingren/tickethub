@@ -6,7 +6,7 @@
     $q = "SELECT id, email, password FROM users
           WHERE email='$email' and password='$pwdmd5'";
 
-    echo $q;
+    //echo $q;
 
     $exec_q = mysqli_query($dbc, $q);
 
@@ -29,13 +29,10 @@
 
     if ($trial) {
       $q = "SELECT id FROM users WHERE email='$email'";
-
-      echo "\nQuery : $q";
-      //echo "\ndbc : $dbc";
-
       $exec_q = mysqli_query($dbc, $q) or die('Could not look up user information; ' . mysqli_error($dbc));
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $_SESSION['user'] = $user;
+      echo $_SESSION['user'];
     } else {
       echo '<h1>LE FAIL!</h1>';
       echo md5($pass);
