@@ -25,7 +25,7 @@
         <div class="card-panel">
           <a href="my-info.php">
             <i class="material-icons large orange-text accent-2">person</i>
-            <h4 class="grey-text">View account information</h4>
+            <h4 class="grey-text">Update account</h4>
           </a>
         </div>
       </div>
