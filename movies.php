@@ -61,7 +61,7 @@
                   <span class="card-title"><h5>' . $movie['title'] . '</h5></span>
                 </div>
                 <div class="card-content">
-                  <b>' . $movie['release_date'] . '<br />
+                  <b>' . date('F j, Y', strtotime($movie['release_date'])) . '<br />
                   ' . $movie['rating'] . ' | ' . $genres . '</b>
                   <p>' . $summary . '</p>
                 </div>
