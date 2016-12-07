@@ -7,8 +7,8 @@ if ($logged_in) {
 
 ?>
 
-<div class="container">
   <main>
+  <div class="container">
     <div class="row">
       <form class="col s12" action="signup.php" method="POST">
         <div class="row">
@@ -44,7 +44,7 @@ if ($logged_in) {
         </div>
       </form>
     </div>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php include('includes/footer.php'); ?>
