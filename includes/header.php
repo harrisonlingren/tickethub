@@ -2,6 +2,16 @@
   //include('error_report.php');
   include('db_connect.php');
   include('showtime.php');
+
+  // start a session
+  session_start();
+
+  // check if logged in and set flag
+  if ( isset($_SESSION['user']) ) {
+    $logged_in = true;
+  } else {
+    $logged_in = false;
+  }
 ?>
 
 <html>
@@ -34,7 +44,7 @@
              </ul>
            </div>
            <ul class="side-nav" id="mobile-menu">
-             <li><h5 class="grey-text text-darken-4">TicketHub</h5></li>
+             <li><h5>TicketHub</h5></li>
              <li><a class="waves-effect" href="movies.php">Movies</a></li>
              <li><a class="waves-effect" href="showtimes.php">Showtimes</a></li>
              <li><a class="waves-effect" href="about.php">About</a></li>
