@@ -19,7 +19,7 @@
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
-    if ($CheckLoginInDB($email, $pass)) {
+    if (CheckLoginInDB($email, $pass)) {
       $q = "SELECT id FROM users WHERE email='$email'";
       $exec_q = mysqli_query($q, $dbc);
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
