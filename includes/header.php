@@ -3,11 +3,12 @@
   include('db_connect.php');
   include('showtime.php');
   include('error_report.php');
-  
+
   // start a session
   session_start();
 
   // check if logged in and set flag
+  echo $_SESSION['user'];
   if ( isset($_SESSION['user']) ) {
     $logged_in = true;
   } else {
@@ -49,6 +50,16 @@
              <li><a class="waves-effect" href="movies.php">Movies</a></li>
              <li><a class="waves-effect" href="showtimes.php">Showtimes</a></li>
              <li><a class="waves-effect" href="about.php">About</a></li>
+             <hr />
+             <?php
+              if ($logged_in) {
+                echo '<li><a href="account.php" class="waves-effect">My Account</a></li>';
+                echo '<li><a href="logout.php" class="waves-effect">Logout</a></li>';
+              } else {
+                echo '<li><a href="login.php" class="waves-effect">Login</a></li>';
+                echo '<li><a href="signup.php" class="waves-effect">Sign Up</a></li>';
+              }
+             ?>
            </ul>
          </div>
        </nav>
