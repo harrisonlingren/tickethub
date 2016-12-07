@@ -13,7 +13,7 @@
       <div class="col s12 l4">
         <div class="card-panel">
           <a href="movies.php">
-            <i class="material-icons large">movie</i>
+            <i class="material-icons large orange accent-2">movie</i>
             <h4 class="grey-text darken-4">Now Playing</h4>
           </a>
         </div>
@@ -21,7 +21,7 @@
       <div class="col s12 l4">
         <div class="card-panel">
           <a href="showtimes.php">
-            <i class="material-icons large">watch_later</i>
+            <i class="material-icons large orange accent-2">watch_later</i>
             <h4 class="grey-text darken-4">Showtimes</h4>
           </a>
         </div>
@@ -29,7 +29,7 @@
       <div class="col s12 l4">
         <div class="card-panel">
           <a href="about.php">
-            <i class="material-icons large">info</i>
+            <i class="material-icons large orange accent-2">info</i>
             <h4 class="grey-text darken-4">About Us</h4>
           </a>
         </div>
