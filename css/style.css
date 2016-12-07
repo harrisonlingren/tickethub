@@ -24,6 +24,10 @@ footer.page-footer {
   color: #ee6e73 !important;
 }
 
+.side-nav > li > h5 {
+  text-align: center;
+}
+
 @media screen and (min-width: 992px) {
   .brand-logo {
     margin-left: 20px;
