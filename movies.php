@@ -10,6 +10,24 @@
   }
 ?>
 
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large orange accent-2 toolbar">
+    <i class="large material-icons">search</i>
+  </a>
+  <ul>
+    <li class="waves-effect waves-light">
+      <form method="GET" action="movies.php">
+       <div class="input-field">
+         <input id="search" name="q" type="search" placeholder="Enter a movie title!" required>
+         <label for="search"><i class="material-icons">search</i></label>
+         <i class="material-icons">close</i>
+       </div>
+     </form>
+    </li>
+  </ul>
+</div>
+
 <main>
   <div class="container">
     <form method="GET" action="showtimes.php" id="moviePicker">
@@ -70,7 +88,6 @@
                 </div>
               </div>
             </div>' . "\n";
-
             $count += 1;
           }
         }
