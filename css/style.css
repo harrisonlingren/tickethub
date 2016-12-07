@@ -28,6 +28,11 @@ footer.page-footer {
   background-color: #ee6e73;
 }
 
+.center-div {
+  display: block;
+  margin: inherit auto;
+}
+
 .side-nav > li > h5 {
   text-align: center;
   color: #ee6e73;
