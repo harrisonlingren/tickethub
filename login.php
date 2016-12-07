@@ -77,7 +77,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col s4">
+          <div class="col s4 offset-s2">
             <button class="btn orange accent-2 waves-effect waves-light center-div" type="submit">Login</button>
           </div>
           <div class="col s4">
