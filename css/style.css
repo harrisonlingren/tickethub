@@ -11,6 +11,10 @@ body {
   flex-direction: column;
 }
 
+footer.page-footer {
+  margin-top: 0;
+}
+
 #sidenav-overlay {
   left: 300;
 }
