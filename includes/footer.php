@@ -12,6 +12,10 @@
                   <li><a class="grey-text text-lighten-3" href="showtimes.php">Showtimes</a></li>
                   <li><a class="grey-text text-lighten-3" href="about.php">About</a></li>
                 </ul>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="account.php">My Account</a></li>
+                  <li><a class="grey-text text-lighten-3" href="signup.php">Sign Up</a></li>
+                </ul>
               </div>
             </div>
           </div>
