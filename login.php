@@ -1,6 +1,4 @@
-<?php
-  include('includes/header.php');
-
+<?php include('includes/db_connect.php');
   function CheckLoginInDB($email, $password, $dbc) {
     $pwdmd5 = md5($password);
     $q = "SELECT id, email, password FROM users
@@ -33,6 +31,8 @@
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $_SESSION['userID'] = $user['id'];
 
+      $logged_in = true;
+
       // handle redirect
       if (isset($_GET['redirect'])) {
         $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub/' . $_GET['redirect'] . '.php';
@@ -45,7 +45,8 @@
       echo "<script>Materialize.toast('$message', 4000)</script>";
     }
   }
-?>
+
+  include('includes/header.php'); ?>
 
 <main>
   <div class="container">
