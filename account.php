@@ -13,18 +13,21 @@
     </div>
 
     <div class="row action-call">
-      <div class="card-panel col s12 m6 l4 offset-l2">
-        <a href="orders.php">
-          <i class="material-icons large">receipt</i>
-          <h4 class="grey-text">View my orders</h4>
-        </a>
+      <div class="col s12 m6 l4 offset-l2">
+        <div class="card-panel">
+          <a href="orders.php">
+            <i class="material-icons large">receipt</i>
+            <h4 class="grey-text">View my orders</h4>
+          </a>
+        </div>
       </div>
-      <div class="card-panel col s12 m6 l4 offset-l2">
-        <a href="my-info.php">
-          <i class="material-icons large">account_info</i>
-          <h4 class="grey-text">View account information</h4>
-        </a>
-
+      <div class="col s12 m6 l4 offset-l2">
+        <div class="card-panel">
+          <a href="my-info.php">
+            <i class="material-icons large">account_info</i>
+            <h4 class="grey-text">View account information</h4>
+          </a>
+        </div>
       </div>
     </div>
   </div>
