@@ -50,24 +50,24 @@
                ?>
              </ul>
            </div>
-           <ul class="side-nav" id="mobile-menu">
-             <li><h5>TicketHub</h5></li>
-             <li><a class="waves-effect" href="movies.php">Movies</a></li>
-             <li><a class="waves-effect" href="showtimes.php">Showtimes</a></li>
-             <li><a class="waves-effect" href="about.php">About</a></li>
-             <hr />
-             <?php
-              if ($logged_in) {
-                echo '<li><a href="account.php" class="waves-effect">Account</a></li>';
-                echo '<li><a href="logout.php" class="waves-effect">Logout</a></li>';
-              } else {
-                echo '<li><a href="login.php" class="waves-effect">Login</a></li>';
-                echo '<li><a href="signup.php" class="waves-effect">Sign Up</a></li>';
-              }
-             ?>
-           </ul>
          </div>
        </nav>
+       <ul class="side-nav" id="mobile-menu">
+         <li><h5>TicketHub</h5></li>
+         <li><a class="waves-effect" href="movies.php">Movies</a></li>
+         <li><a class="waves-effect" href="showtimes.php">Showtimes</a></li>
+         <li><a class="waves-effect" href="about.php">About</a></li>
+         <hr />
+         <?php
+          if ($logged_in) {
+            echo '<li><a href="account.php" class="waves-effect">Account</a></li>';
+            echo '<li><a href="logout.php" class="waves-effect">Logout</a></li>';
+          } else {
+            echo '<li><a href="login.php" class="waves-effect">Login</a></li>';
+            echo '<li><a href="signup.php" class="waves-effect">Sign Up</a></li>';
+          }
+         ?>
+       </ul>
       </div>
     </header>
 
