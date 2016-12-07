@@ -24,6 +24,7 @@
       $user = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $_SESSION['user'] = $user;
     } else {
+      echo '<h1>LE FAIL!</h1>';
       $message = '<span class="red darken-1">Incorect email or password!</span>';
       echo "<script>Materialize.toast($message, 4000)</script>";
     }
@@ -64,13 +65,4 @@
   </div>
 </main>
 
-<?php
-  include('includes/footer.php');
-
-  if (!$logged_in) {
-    $_SESSION['user'] = $user;
-  }
-
-  header("Location: https://blue.butler.edu/~hlingren/CME419/tickethub");
-  die();
-?>
+<?php include('includes/footer.php'); ?>
