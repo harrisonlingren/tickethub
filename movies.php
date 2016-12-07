@@ -89,10 +89,10 @@
 
 <div id="searchModal" class="modal bottom-sheet">
   <div class="modal-content">
-    <h4><i class="material-icons">search</i> Enter a movie title to search!</h4>
+    <h4><i class="material-icons">search</i> Search movies...</h4>
     <form method="GET" action="movies.php">
      <div class="input-field">
-       <input id="search" name="q" type="search" placeholder="Search movies..." required>
+       <input id="search" name="q" type="search" placeholder="Enter movie title here..." required>
        <i class="material-icons">close</i>
      </div>
    </form>
