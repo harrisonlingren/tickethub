@@ -9,6 +9,9 @@ if ($logged_in) {
 
   <main>
   <div class="container">
+
+    <h3>Sign up for a TicketHub account</h3>
+
     <div class="row">
       <form class="col s12" action="signup.php" method="POST">
         <div class="row">
@@ -40,6 +43,11 @@ if ($logged_in) {
           <div class="input-field col s10">
             <input id="password" type="password" class="validate">
             <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <button class="center waves-effect waves-light" type="submit">Sign Up</button>
           </div>
         </div>
       </form>
