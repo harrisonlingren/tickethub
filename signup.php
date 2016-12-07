@@ -13,27 +13,27 @@ if ($logged_in) {
     <h3>Sign up for a TicketHub account</h3>
 
     <div class="row">
-      <form class="col s12" action="signup.php" method="POST">
+      <form action="signup.php" method="POST">
         <div class="row">
-          <div class="input-field col s12 m10 l8">
+          <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
             <input id="firstname" name="firstname" type="text" class="validate">
             <label for="firstname">First Name</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12 m10 l8">
+          <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
             <input id="lastname" name="lastname" type="text" class="validate">
             <label for="lastname">Last Name</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12 m10 l8">
+          <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
             <input id="email" type="email" class="validate">
             <label for="email">Email</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12 m10 l8">
+          <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
             <input id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
