@@ -24,7 +24,7 @@
       <div class="col s12 m6 l4 ">
         <div class="card-panel">
           <a href="my-info.php">
-            <i class="material-icons large orange-text accent-2">account_info</i>
+            <i class="material-icons large orange-text accent-2">person</i>
             <h4 class="grey-text">View account information</h4>
           </a>
         </div>
