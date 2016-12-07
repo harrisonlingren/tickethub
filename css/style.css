@@ -19,7 +19,7 @@ footer.page-footer {
   left: 300;
 }
 
-.action-call, .action-call > a {
+.action-call, .action-call > .col > .card-panel > a > h4 {
   color: #ee6e73 !important;
 }
 
