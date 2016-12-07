@@ -19,10 +19,6 @@ footer.page-footer {
   left: 300;
 }
 
-.action-call > .col > .card-panel > a > .material-icons {
-  color: #ffab40 !important;
-}
-
 .action-call {
   text-align: center !important;
 }
