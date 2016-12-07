@@ -15,7 +15,7 @@
       $welcome_header = "Welcome, $firstname!";
     } else {
       echo "<h3>Error: Cannot access account information. Please try again.</h3>
-      <script>window.location = 'https://blue.butler.edu/~hlingren/CME419/tickethub';</script>";
+      <script>/*window.location = 'https://blue.butler.edu/~hlingren/CME419/tickethub';*/</script>";
       $welcome_header = "";
     }
   }
