@@ -3,17 +3,19 @@
 
   function CheckLoginInDB($email, $password) {
     $pwdmd5 = md5($password);
-    $q = "SELECT email, password FROM users
+    $q = "SELECT id, email, password FROM users
           WHERE email='$email' and password='$pwdmd5'";
 
     echo $q;
 
     $result = mysqli_query($dbc, $q);
 
-    if(!$result || mysqli_fetch_array($result, MYSQLI_ASSOC) <= 0) {
-      return false;
+    if($result) {
+      $id = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    } else {
+      return null;
     }
-    return true;
+    return $id;
   }
 
   if ($_SERVER['REQUEST_METHOD'] == "POST" && ($_POST['email'] !== null) && ($_POST['password'] !== null)) {
