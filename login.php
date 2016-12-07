@@ -14,7 +14,7 @@
     return true;
   }
 
-  if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  if ($_SERVER['REQUEST_METHOD'] == "POST" && ($_POST['email'] !== null) && ($_POST['password'] !== null)) {
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
@@ -25,7 +25,7 @@
       $_SESSION['user'] = $user;
     } else {
       echo '<h1>LE FAIL!</h1>';
-      $message = '<span class="red darken-1">Incorect email or password!</span>';
+      $message = 'Incorect email or password!';
       echo "<script>Materialize.toast('$message', 4000)</script>";
     }
   }
