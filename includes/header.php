@@ -2,7 +2,6 @@
   //include('error_report.php');
   include('db_connect.php');
   include('showtime.php');
-  include('error_report.php');
 
   // start a session
   session_start();
