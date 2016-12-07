@@ -15,37 +15,25 @@ if ($logged_in) {
     <div class="row">
       <form class="col s12" action="signup.php" method="POST">
         <div class="row">
-          <div class="col s1 m2 l3">
-            <i class="material-icons large red-icon">person</i>
-          </div>
-          <div class="input-field col s11 l9 l7">
+          <div class="input-field col s12 m10 l8">
             <input id="firstname" name="firstname" type="text" class="validate">
             <label for="firstname">First Name</label>
           </div>
         </div>
         <div class="row">
-          <div class="col s1 m2 l3">
-            <i class="material-icons large red-icon">person</i>
-          </div>
-          <div class="input-field col s11 m9 l7">
+          <div class="input-field col s12 m10 l8">
             <input id="lastname" name="lastname" type="text" class="validate">
             <label for="lastname">Last Name</label>
           </div>
         </div>
         <div class="row">
-          <div class="col s1 m2 l3">
-            <i class="material-icons large red-icon">email</i>
-          </div>
-          <div class="input-field col s11 m9 l7">
+          <div class="input-field col s12 m10 l8">
             <input id="email" type="email" class="validate">
             <label for="email">Email</label>
           </div>
         </div>
         <div class="row">
-          <div class="col s1 m2 l3">
-            <i class="material-icons large red-icon">lock</i>
-          </div>
-          <div class="input-field col s11 m9 l7">
+          <div class="input-field col s12 m10 l8">
             <input id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
