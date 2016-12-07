@@ -43,15 +43,6 @@ if ($logged_in) {
           <label for="password">Password</label>
         </div>
       </div>
-      <div class="row">
-        <div class="col s12">
-          This is an inline input field:
-          <div class="input-field inline">
-            <input id="email" type="email" class="validate">
-            <label for="email" data-error="Enter a valid email address">Email</label>
-          </div>
-        </div>
-      </div>
     </form>
   </div>
 
