@@ -38,7 +38,7 @@
           $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub/' . $_GET['redirect'] . '.php';
         } else {
           $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub';
-        } echo "<h3>Logged in! Redirecting...</h3>";
+        } echo "<h5>Logged in! Redirecting...</h5>";
         echo "<script>window.location = '$newPath';</script>";
 
       } else {
@@ -47,7 +47,7 @@
       }
     }
   } else {
-    echo '<h3>Already logged in! Redirecting...</h3>';
+    echo '<h5>Already logged in! Redirecting...</h5>';
     echo "<script>window.location = 'http://blue.butler.edu/~hlingren/CME419/tickethub'</script>";
   }
 ?>
