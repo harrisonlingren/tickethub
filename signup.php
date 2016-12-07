@@ -19,6 +19,10 @@ if ($logged_in) {
             <i class="material-icons">person</i>
             <input id="firstname" name="firstname" type="text" class="validate">
             <label for="firstname">First Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
             <input id="lastname" name="lastname" type="text" class="validate">
             <label for="lastname">Last Name</label>
           </div>
