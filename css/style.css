@@ -26,6 +26,7 @@ footer.page-footer {
 
 .side-nav > li > h5 {
   text-align: center;
+  color: #ee6e73;
 }
 
 @media screen and (min-width: 992px) {
