@@ -24,7 +24,6 @@
       $pass = $_POST['password'];
 
       $trial = CheckLoginInDB($email, $pass, $dbc);
-      echo "<h3>Logged in! Redirecting...</h3>";
 
       if ($trial) {
         $q = "SELECT id FROM users WHERE email='$email'";
@@ -39,7 +38,8 @@
           $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub/' . $_GET['redirect'] . '.php';
         } else {
           $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub';
-        } echo "<script>window.location = '$newPath';</script>";
+        } echo "<h3>Logged in! Redirecting...</h3>";
+        echo "<script>window.location = '$newPath';</script>";
 
       } else {
         $message = 'Incorrect email or password!';
