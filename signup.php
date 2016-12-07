@@ -12,7 +12,7 @@ if ($logged_in) {
 
     <h3>Sign up for a TicketHub account</h3>
 
-    <div class="row">
+    <div class="row card-panel">
       <form action="signup.php" method="POST">
         <div class="row">
           <div class="input-field col s12 m10 l8 offset-m1 offset-l2">

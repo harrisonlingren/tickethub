@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row card-panel">
       <form action="login.php" method="POST">
         <div class="row">
           <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
