@@ -31,6 +31,10 @@ footer.page-footer {
   color: #ffab40 !important;
 }
 
+.footer-right+ul {
+  float: right;
+}
+
 .center-div {
   display: block;
   margin: 0 auto;
