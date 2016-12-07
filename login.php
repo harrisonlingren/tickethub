@@ -51,7 +51,7 @@
         <div class="row">
           <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
             <input type="password" id="password" name="password" />
-            <label for="password"></label>
+            <label for="password">Password</label>
           </div>
         </div>
       </form>
