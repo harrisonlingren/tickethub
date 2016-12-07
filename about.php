@@ -13,9 +13,13 @@
         <div class="card-panel">
           About us stuff here!
         </div>
+      </div>
+      <div class="col s12 m6 l4">
         <div class="card-panel">
           Even more!
         </div>
+      </div>
+      <div class="col s12 m6 l4">
         <div class="card-panel">
           And more yet!
         </div>
