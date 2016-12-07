@@ -32,12 +32,21 @@
         <nav>
          <div class="nav-wrapper">
            <div class="col s12">
-             <a href="index.php" class="brand-logo">TicketHub</a>
+             <a href="index.php" class="brand-logo-center">TicketHub</a>
              <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
-             <ul id="nav-mobile" class="right hide-on-med-and-down">
+             <ul class="left hide-on-med-and-down">
+               <li><form method="GET" action="movies.php">
+                <div class="input-field">
+                  <input id="search" name="q" type="search" required>
+                  <label for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+              </form></li>
                <li><a href="movies.php">Movies</a></li>
                <li><a href="showtimes.php">Showtimes</a></li>
                <li><a href="about.php">About</a></li>
+             </ul>
+             <ul class="">
                <?php
                 if ($logged_in) {
                   echo '<li><a href="account.php">My Account</a></li>';
@@ -47,13 +56,6 @@
                   echo '<li><a href="signup.php">Sign Up</a></li>';
                 }
                ?>
-               <li><form method="GET" action="movies.php">
-                <div class="input-field">
-                  <input id="search" name="q" type="search" required>
-                  <label for="search"><i class="material-icons">search</i></label>
-                  <i class="material-icons">close</i>
-                </div>
-              </form></li>
              </ul>
            </div>
            <ul class="side-nav" id="mobile-menu">
