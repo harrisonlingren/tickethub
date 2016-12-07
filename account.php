@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="col s12">
-        <h3><?php echo $welcome_header ?></h3>;
+        <h3><?php echo $welcome_header ?></h3>
       </div>
     </div>
 
@@ -16,7 +16,7 @@
       <div class="col s12 m6 l4 ">
         <div class="card-panel">
           <a href="orders.php">
-            <i class="material-icons large">receipt</i>
+            <i class="material-icons large orange-text accent-2">receipt</i>
             <h4 class="grey-text">View my orders</h4>
           </a>
         </div>
@@ -24,7 +24,7 @@
       <div class="col s12 m6 l4 ">
         <div class="card-panel">
           <a href="my-info.php">
-            <i class="material-icons large">account_info</i>
+            <i class="material-icons large orange-text accent-2">account_info</i>
             <h4 class="grey-text">View account information</h4>
           </a>
         </div>
