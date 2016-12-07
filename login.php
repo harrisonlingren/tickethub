@@ -21,7 +21,7 @@
     $pass = $_POST['password'];
 
     $trial = CheckLoginInDB($email, $pass);
-    echo $trial;
+    echo "Login result: " . $trial;
 
     if ($trial) {
       $q = "SELECT id FROM users WHERE email='$email'";
