@@ -36,8 +36,9 @@
       // handle redirect
       if (isset($_GET['redirect'])) {
         $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub/' . $_GET['redirect'] . '.php';
-        echo "<script>window.location.redirect('$newPath');</script>";
-      }
+      } else {
+        $newPath = 'https://blue.butler.edu/~hlingren/CME419/tickethub';
+      } echo "<script>window.location = $newPath;</script>";
 
     } else {
       $message = 'Incorrect email or password!';
