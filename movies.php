@@ -44,8 +44,8 @@
               $genres .= ', ' . $movie['genre_extra'];
             }
 
-            if(strlen($movie['summary']) > 150) {
-              $summary = substr($movie['summary'], 0, 147) . '...';
+            if(strlen($movie['summary']) > 115) {
+              $summary = substr($movie['summary'], 0, 112) . '...';
             } else {
               $summary = $movie['summary'];
             }
@@ -61,7 +61,8 @@
                   <span class="card-title"><h5>' . $movie['title'] . '</h5></span>
                 </div>
                 <div class="card-content">
-                  <b>' . $movie['rating'] . ' | ' . $genres . '</b>
+                  <b>' . $movie['release_date'] . '<br />
+                  ' . $movie['rating'] . ' | ' . $genres . '</b>
                   <p>' . $summary . '</p>
                 </div>
                 <div class="card-action waves-effect" onclick="' . "goToMovie('" . $movie['id'] . "')" . '">
