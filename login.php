@@ -12,7 +12,7 @@
 
     if($exec_q) {
       $result = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
-      echo $id['id'];
+      $id = $result['id'];
     } else {
       echo 'nope...';
       return null;
