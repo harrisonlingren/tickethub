@@ -12,7 +12,7 @@
 
 
 <div class="fixed-action-btn">
-  <a class="btn-floating btn-large orange accent-2 toolbar" data-target="searchModal">
+  <a class="btn-floating btn-large orange accent-2 toolbar" href="#searchModal">
     <i class="large material-icons">search</i>
   </a>
 </div>
