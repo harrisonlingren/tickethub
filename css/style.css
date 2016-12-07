@@ -19,7 +19,7 @@ footer.page-footer {
   left: 300;
 }
 
-.action-call > .card-panel > .material-icons {
+.action-call > .col > .card-panel > .material-icons {
   color: #ffab40;
 }
 
