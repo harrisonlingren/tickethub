@@ -93,7 +93,6 @@
     <form method="GET" action="movies.php">
      <div class="input-field">
        <input id="search" name="q" type="search" required>
-       <label for="search"><i class="material-icons">search</i></label>
        <i class="material-icons">close</i>
      </div>
    </form>
