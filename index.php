@@ -9,7 +9,7 @@
         <h3>Home</h3>
       </div>
     </div>
-    <div class="row primary-color">
+    <div class="row action-call">
       <div class="col s12 m4">
         <div class="card-panel">
           <i class="material-icons large primary-color">movie</i>

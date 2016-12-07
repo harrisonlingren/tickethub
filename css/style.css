@@ -19,7 +19,7 @@ footer.page-footer {
   left: 300;
 }
 
-.primary-color {
+.action-call, .action-call > a {
   color: #ee6e73;
 }
 
