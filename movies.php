@@ -10,9 +10,8 @@
   }
 ?>
 
-
-<div class="fixed-action-btn">
-  <a class="btn-floating btn-large orange accent-2 toolbar">
+<div class="fixed-action-btn toolbar">
+  <a class="btn-floating btn-large orange accent-2">
     <i class="large material-icons">search</i>
   </a>
   <ul>
