@@ -48,9 +48,3 @@ footer.page-footer {
   text-align: center;
   color: #ee6e73;
 }
-
-@media screen and (min-width: 992px) {
-  .brand-logo {
-    margin-left: 20px;
-  }
-}
