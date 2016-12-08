@@ -133,9 +133,10 @@
               </li>';
             }
             echo '
-            </ul>
-          </div>';
+            </ul>';
           }
+          echo '
+          </div>';
         }
 
       } else {
