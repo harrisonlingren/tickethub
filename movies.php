@@ -1,7 +1,7 @@
 <?php
   include('includes/header.php');
 
-  if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['q']) {
+  if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['q'])) {
     $flag = TRUE;
     $query = $_GET['q'];
   } else {
