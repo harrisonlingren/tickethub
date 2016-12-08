@@ -9,7 +9,7 @@
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $pass = $_POST['pass'];
-    $pwdmd5 = md5($pass);
+    $pwdmd5 = encryptIt($pass);
 
     $updateinfo_q = "UPDATE users SET email='$email', password='$pwdmd5', firstname='$firstname', lastname='$lastname' WHERE users.id = '$userID'";
 
@@ -19,7 +19,7 @@
     }
   }
 
-  $userinfo_q = "SELECT firstname, lastname, email FROM users WHERE users.id = '$userID'";
+  $userinfo_q = "SELECT firstname, lastname, email, password FROM users WHERE users.id = '$userID'";
   $exec_q = mysqli_query($dbc, $userinfo_q);
   if ($exec_q) {
     $userinfo = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
@@ -64,7 +64,7 @@
 
         <div class="row">
           <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
-            <input id="password" type="password" name="pass" class="validate" value="<?php echo '00000000'; ?>">
+            <input id="password" type="password" name="pass" class="validate" value="<?php echo decryptIt($userinfo['password']); ?>">
             <label for="password">Password</label>
           </div>
         </div>
