@@ -57,7 +57,7 @@
 
       $times_query = "SELECT showings.id, movie_id, showings.time, theater_id,
       available_seats FROM showings
-      WHERE showings.date between $date1 and $date2";
+      WHERE showings.date between '$date1' and '$date2'";
 
       if($flag) {
          $times_query .= " AND movie_id = $movie";
