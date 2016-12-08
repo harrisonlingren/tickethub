@@ -56,8 +56,9 @@
         $exec_q = mysqli_query($dbc, $times_query);
         if($exec_q) {
           // load results to memory
-          $results = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
-          echo '<div id="day' . $i . '">';
+          while ($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
+            array_push($results, $time);
+          } echo '<div id="day' . $i . '">';
 
           // iterate through cached rows, add array for each movie and add times to movie arrays
           $movies = array();
