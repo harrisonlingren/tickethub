@@ -10,19 +10,27 @@
     $check_edit = $_POST['edit'];
 
     // find amount of tickets available before new order / edit
-    $get_original_tix = "SELECT tickets FROM orders where orders.id = $showID";
-    $exec_q = mysqli_query($dbc, $get_original_tix);
+    $get_available_tix = "SELECT available_seats FROM showings where showtimes.id = $showID";
+    $exec_q = mysqli_query($dbc, $get_available_tix);
     if ($exec_q) {
-      $originalTixA = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
-      $originalTix = $originalTixA['tickets'];
+      $availableTixA = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
+      $availableTix = $availableTixA['tickets'];
     }
 
     // check if editing, and create query and change in open tickets accordingly
     if ($check_edit == 1) {
+      // find amount of tickets from original order
+      $get_original_tix = "SELECT tickets FROM orders where orders.showing_id = $showID";
+      $exec_q = mysqli_query($dbc, $get_original_tix);
+      if ($exec_q) {
+        $originalTixA = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
+        $originalTix = $originalTixA['tickets'];
+      }
+
       $order_q = "UPDATE orders SET tickets='$tickets'";
       $amountTixChanged = (((int) $originalTix) - ((int)($tickets)));
     } else {
-      $order_q = "INSERT INTO orders (showing_id, tickets, user_id) VALUES ('$showID', '$tickets', $userID)";
+      $order_q = "INSERT INTO orders (showing_id, tickets, user_id) VALUES ('$showID', '$tickets', '$userID')";
       $amountTixChanged = (int) $tickets;
     }
 
