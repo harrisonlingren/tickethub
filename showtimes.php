@@ -18,22 +18,19 @@
     <?php
       // initialize array of upcoming dates
       $dates = array();
-      $dates_query = "SELECT DISTINCT showings.date, showings.time FROM showings ORDER BY showings.date ASC";
+      $dates_query = "SELECT showings.date FROM showings ORDER BY showings.date ASC";
       $exec_q = mysqli_query($dbc, $dates_query);
       if ($exec_q) {
         while ($date = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-          //print_r($date);
-          $addDate = strtotime($date['date'] . ' ' . $date['time']);
-          //echo $addDate;
+          $addDate = strtotime($date['date']);
           array_push(
             $dates,
-            date('Y-m-d G:i:s', strtotime($addDate))
+            date('Y-m-d', strtotime($addDate))
           );
         }
       }
 
-      print_r($dates);
-
+      //print_r($dates);
 
     // build tabs to navigate between days
     ?><div class="row">
