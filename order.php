@@ -69,6 +69,8 @@
   } else {
     echo "<h5>No appropriate handler was determined.</h5><p>" . print_r($_GET) . "</p><p> " . print_r($_POST) . "</p>";
   }
+
+  echo "<p>" . print_r($_GET) . "</p><p> " . print_r($_POST) . "</p>";
 ?>
 
 <main>
