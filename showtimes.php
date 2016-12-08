@@ -22,6 +22,7 @@
       $exec_q = mysqli_query($dbc, $dates_query);
       if ($exec_q) {
         while ($date = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
+          print_r($date);
           array_push(
             $dates,
             date('', strtotime($date['date'] . ' ' . $date['time']))
@@ -50,7 +51,7 @@
       // otherwise, get showtimes for the next 7 days sorted by time
       $date1 = $dates[0]; $date2 = $dates[6];
 
-      print_r($dates);
+      //print_r($dates);
 
       $times_query = "SELECT showings.id, movie_id, showings.time, theater_id,
       available_seats FROM showings
