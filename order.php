@@ -4,7 +4,7 @@
 
   // determine origin:
   //  if POST, retrieve order data from submission, create order record, and reduce ticket count
-  if ($_SERVER['REQUEST_METHOD'] = 'POST' && isset($_POST['tickets'])) {
+  if ( $_SERVER['REQUEST_METHOD'] = 'POST' && isset($_POST['showID']) && isset($_POST['tickets']) ) {
     $showID = $_POST['showID'];
     $tickets = $_POST['tickets'];
     $check_edit = $_POST['checkEdit'];
@@ -66,6 +66,8 @@
   } else if (isset($_GET['showing'])) {
     $flag = false;
     $showID = $_GET['showing'];
+  } else {
+    echo "<h5>No appropriate handler was determined.</h5><p>" . print_r($_GET) . "</p><p> " . print_r($_POST) . "</p>";
   }
 ?>
 
