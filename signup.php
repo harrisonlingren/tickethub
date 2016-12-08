@@ -65,7 +65,7 @@ if ($logged_in) {
 
         <div class="row">
           <div class="col s4 offset-s4">
-            <button class="btn orange accent-2 waves-effect waves-light center-div" type="submit">Update Account Info</button>
+            <button class="btn orange accent-2 waves-effect waves-light center-div" type="submit">Sign Up</button>
           </div>
         </div>
 
