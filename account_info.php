@@ -39,7 +39,7 @@
     </div>
 
     <div class="row card-panel">
-      <form action="my-info.php" method="POST">
+      <form action="account_info.php" method="POST">
 
         <div class="row">
           <div class="input-field col s12 m10 l8 offset-m1 offset-l2">

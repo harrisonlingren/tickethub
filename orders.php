@@ -16,7 +16,6 @@
     <ul class="collapsible" data-collapsible="accordion">
 
       <?php
-
         // get showings, place into array
         $orders_q = "SELECT orders.id, orders.tickets, showings.theater_id,
                   showings.date, showings.time, movies.title FROM orders
@@ -26,7 +25,6 @@
                   ORDER BY orders.id DESC";
 
         $exec_q = mysqli_query($dbc, $orders_q);
-
         if ($exec_q) {
           while ($order = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
             $formatted_time = date('g:i a, n/j/y', strtotime($order['date'] . $order['time']));
@@ -34,11 +32,14 @@
             $order_desc = '<b>' . $order_title . '</b><br />' .
                 'Showing date: ' . $formatted_time . '<br />' .
                 'Tickets purchased: ' . $order['tickets'];
-                
+
             echo '
             <li>
               <div class="collapsible-header"><i class="material-icons">receipt</i>' . $order_title . '</div>
-              <div class="collapsible-body"><p>' . $order_desc . '</p></div>
+              <div class="collapsible-body">
+                <p>' . $order_desc . '</p>
+                <a class="collapsible-action" onclick="edit_order.php?id=' . $order['id'] . '">Edit Order</a>
+              </div>
             </li>';
           }
         }
