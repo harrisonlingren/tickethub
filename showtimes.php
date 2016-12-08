@@ -24,13 +24,15 @@
         while ($date = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
           //print_r($date);
           $addDate = strtotime($date['date'] . ' ' . $date['time']);
-          echo $addDate;
+          //echo $addDate;
           array_push(
             $dates,
-            date('Y-m-d G:i:s', $addDate)
+            date('Y-m-d G:i:s', strtotime($addDate))
           );
         }
       }
+
+      print_r($dates);
 
 
     // build tabs to navigate between days
