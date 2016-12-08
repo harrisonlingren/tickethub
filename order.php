@@ -7,7 +7,7 @@
   if ($_SERVER['REQUEST_METHOD'] = 'POST' && isset($_POST['tickets'])) {
     $showID = $_POST['showID'];
     $tickets = $_POST['tickets'];
-    $check_edit = $_POST['edit'];
+    $check_edit = $_POST['checkEdit'];
 
     // find amount of tickets available before new order / edit
     $get_available_tix = "SELECT available_seats FROM showings where showtimes.id = $showID";
@@ -82,8 +82,8 @@
 
         <div class="row">
           <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
-            <input id="show" name="showID"  type="text" disabled value="Showtime: <?php echo $showID ?>" />
-            <input name="edit" type="hidden" disabled value=" <?php if($flag) {echo 1;} else {echo 0;} ?>"
+            <input id="show" name="showID" type="text" disabled value="Showtime: <?php echo $showID ?>" />
+            <input name="checkEdit" type="hidden" disabled value=" <?php if($flag) {echo 1;} else {echo 0;} ?>"
             <label for="show">Selected showtime:</label>
           </div>
         </div>
