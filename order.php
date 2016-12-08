@@ -54,7 +54,8 @@
     $flag = true;
 
     $get_order_q = "SELECT orders.id, tickets, showing_id FROM orders WHERE orders.id = '$orderID' and orders.user_id = '$userID'";
-    if ($exec_q && count(mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) > 0) {
+    $count = count(mysqli_fetch_array($exec_q, MYSQLI_ASSOC));
+    if ($exec_q && $count > 0) {
       $order = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $showID = $order['showing_id'];
     } else {
