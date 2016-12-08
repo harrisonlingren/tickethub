@@ -15,7 +15,7 @@
     <div class="row action-call">
       <div class="col s12 m6 ">
         <div class="card-panel">
-          <a href="orders.php">
+          <a href="my_orders.php">
             <i class="material-icons large orange-text accent-2">receipt</i>
             <h4 class="grey-text">View my orders</h4>
           </a>
