@@ -22,10 +22,12 @@
       $exec_q = mysqli_query($dbc, $dates_query);
       if ($exec_q) {
         while ($date = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-          print_r($date);
+          //print_r($date);
+          $addDate = strtotime($date['date'] . ' ' . $date['time']);
+          echo $addDate;
           array_push(
             $dates,
-            date('', strtotime($date['date'] . ' ' . $date['time']))
+            date('', $addDate)
           );
         }
       }
