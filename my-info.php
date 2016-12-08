@@ -11,7 +11,7 @@
     $pass = $_POST['pass'];
     $pwdmd5 = md5($pass);
 
-    $updateinfo_q = "UPDATE users SET email='$email', pass='$pwdmd5', firstname='$firstname', lastname='$lastname' WHERE users.id = '$userID'";
+    $updateinfo_q = "UPDATE users SET email='$email', password='$pwdmd5', firstname='$firstname', lastname='$lastname' WHERE users.id = '$userID'";
 
     $exec_q = mysqli_query($dbc, $updateinfo_q);
     if (!$exec_q) {
