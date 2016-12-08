@@ -18,7 +18,7 @@
     <?php
       // initialize array of upcoming dates
       $dates = array();
-      $dates_query = "SELECT showings.date FROM showings ORDER BY showings.date ASC";
+      $dates_query = "SELECT DISTINCT showings.date FROM showings ORDER BY showings.date ASC";
       $exec_q = mysqli_query($dbc, $dates_query);
       if ($exec_q) {
         while ($date = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
