@@ -55,6 +55,7 @@
 
     $get_order_q = "SELECT orders.id, tickets, showing_id FROM orders WHERE orders.id = '$orderID' and orders.user_id = '$userID'";
     $count = count(mysqli_fetch_array($exec_q, MYSQLI_ASSOC));
+    echo $get_order_q;
     if ($exec_q) {
       $order = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $showID = $order['showing_id'];
