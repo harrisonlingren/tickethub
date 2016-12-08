@@ -53,30 +53,21 @@
         }
         $times_query .= "  ORDER BY showings.time ASC";
 
-        // echo $times_query;
-
-        $results = array();
         $exec_q = mysqli_query($dbc, $times_query);
         if($exec_q) {
           // load results to memory
-          while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-            array_push($results, $time);
-          }
-
+          $results = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
           echo '<div id="day' . $i . '">';
 
           // iterate through cached rows, add array for each movie and add times to movie arrays
           $movies = array();
           foreach ($results as $time) {
-            // $curr_movie = $time['movie_id'];
-
             $mov = $time['movie_id'];
             $dat = $loop_date;
             $tim = $time['time'];
             $formatted_time = $dat . ' ' . $tim;
             $the = $time['theater_id'];
             $sea = $time['available_seats'];
-
             if( !array_key_exists($mov, $movies)) {
               $movies[$mov] = array();
             }
