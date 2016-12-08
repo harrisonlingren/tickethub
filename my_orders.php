@@ -38,7 +38,7 @@
               <div class="collapsible-header"><i class="material-icons">receipt</i>' . $order_title . '</div>
               <div class="collapsible-body">
                 <p>' . $order_desc . '</p>
-                <a class="collapsible-action" href="order.php?id=' . $order['id'] . '">Edit Order</a>
+                <a class="collapsible-action" href="order.php?edit=' . $order['id'] . '">Edit Order</a>
               </div>
             </li>';
           }
