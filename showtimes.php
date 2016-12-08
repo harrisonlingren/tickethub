@@ -23,7 +23,7 @@
       if ($exec_q) {
         while ($date = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
           $addDate = strtotime($date['date']);
-          echo $addDate + "<br />";
+          echo $addDate . "<br />";
           array_push(
             $dates,
             date('Y-m-d', strtotime($addDate))
