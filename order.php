@@ -59,7 +59,7 @@
     if ($exec_q) {
       $order = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $showID = $order['showing_id'];
-      echo "\nGrabbed showing ID: " . $order['showing_id'];
+      echo "<br />Grabbed showing ID: " . $order['showing_id'];
     } else {
       echo "\n<h5>Order #$orderID not found for user #$userID. \nQuery used: $get_order_q</h5> \nRecords found: $count";
     }
@@ -69,10 +69,10 @@
     $flag = false;
     $showID = $_GET['showing'];
   } else {
-    echo "\n<h5>No appropriate handler was determined.</h5><p>" . print_r($_GET) . "</p><p> " . print_r($_POST) . "</p>";
+    echo "<br /><h5>No appropriate handler was determined.</h5><p>" . print_r($_GET) . "</p><p> " . print_r($_POST) . "</p>";
   }
 
-  echo "\n<p>" . print_r($_GET) . "</p><p> " . print_r($_POST) . "</p>";
+  echo "<p>" . print_r($_GET) . "</p><p> " . print_r($_POST) . "</p>";
 ?>
 
 <main>
