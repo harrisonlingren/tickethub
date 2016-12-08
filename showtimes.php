@@ -27,7 +27,7 @@
           echo $addDate;
           array_push(
             $dates,
-            date('', $addDate)
+            date('Y-m-d G:i:s', $addDate)
           );
         }
       }
