@@ -31,7 +31,7 @@
         }
       }
 
-      print_r($dates);
+      //print_r($dates);
 
     // build tabs to navigate between days
     ?><div class="row">
@@ -90,7 +90,7 @@
             $movies[$mov] = array();
           }
           array_push($movies[$mov], new Showtime($formatted_time, $the, $sea, $showID));
-        } print_r($movies);
+        } //print_r($movies);
 
         // build arrays for each set of showings and save to session
         $dailyshowings = array();
