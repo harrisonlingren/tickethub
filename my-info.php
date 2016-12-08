@@ -19,7 +19,7 @@
     }
   }
 
-  $userinfo_q = "SELECT firstname, lastname, email WHERE users.id = '$userID'";
+  $userinfo_q = "SELECT firstname, lastname, email FROM users WHERE users.id = '$userID'";
   $exec_q = mysqli_query($dbc, $userinfo_q);
   if ($exec_q) {
     $userinfo = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
