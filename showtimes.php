@@ -47,7 +47,7 @@
       // otherwise, get showtimes for the next 7 days sorted by time
       for ($i=1; $i<=7; $i++) {
         $loop_date = $dates[$i-1];
-        $times_query = "SELECT movie_id, showings.time, theater_id, available_seats FROM showings WHERE showings.date = '$loop_date'";
+        $times_query = "SELECT showings.id, movie_id, showings.time, theater_id, available_seats FROM showings WHERE showings.date = '$loop_date'";
         if($flag) {
            $times_query .= " AND movie_id = $movie";
         }
@@ -76,11 +76,12 @@
             $formatted_time = $dat . ' ' . $tim;
             $the = $time['theater_id'];
             $sea = $time['available_seats'];
+            $showID = $time['id'];
 
             if( !array_key_exists($mov, $movies)) {
               $movies[$mov] = array();
             }
-            array_push($movies[$mov], new Showtime($formatted_time, $the, $sea));
+            array_push($movies[$mov], new Showtime($formatted_time, $the, $sea, $showID));
             //print_r($movies);
           }
 
@@ -100,7 +101,7 @@
                   Theater: ' . $s->theater . '<br />
                   Open seats: ' . $s->open_seats . '
                   </p>
-                  <a href="#" class="secondary-content">
+                  <a href="order.php?showing' . $s->ID . '" class="secondary-content">
                     <i class="material-icons">keyboard_arrow_right</i>
                   </a>
                 </div>
