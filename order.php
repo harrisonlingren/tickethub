@@ -59,6 +59,7 @@
     if ($exec_q) {
       $order = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
       $showID = $order['showing_id'];
+      echo "Grabbed showing ID: " . $showID;
     } else {
       echo "<h5>Order #$orderID not found for user #$userID. \nQuery used: $get_order_q</h5> \nRecords found: $count";
     }
