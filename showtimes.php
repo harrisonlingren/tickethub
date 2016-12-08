@@ -108,14 +108,17 @@
           }
 
           $_SESSION['showings'][$i] = $dailyshowings[$i];
+
+          echo "<br /><b>" . ($showing['date'] == $dates[$i-1]) . "</b> <h3>Day $i Showings:</h3><hr />";
+          print_r($dailyshowings[$i]);
         }
 
-        echo "<h3>Daily showings:</h3><br />";
-        print_r($dailyshowings);
-        echo "<br /><hr /><br />";
-        echo "<h3>Day 1 showings:</h3><br />";
-        print_r($dailyshowings);
-        echo "<br /><hr /><br />";
+        // echo "<h3>Daily showings:</h3><br />";
+        // print_r($dailyshowings);
+        // echo "<br /><hr /><br />";
+        // echo "<h3>Day 1 showings:</h3><br />";
+        // print_r($dailyshowings);
+        // echo "<br /><hr /><br />";
 
         for ($i=1; $i<=7; $i++) {
           echo '<div id=day' . $i . '>';
