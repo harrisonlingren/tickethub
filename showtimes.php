@@ -113,27 +113,28 @@
         for ($i=1; $i<=7; $i++) {
           foreach ($dailyshowings[$i] as $title => $showing) {
             echo '
-
-            <h4>' . $MOVIE_TITLES[$title] . '</h4>
-            <ul class="collapsible" data-collapsible="expandable">';
+            <div id=day' . $i . '>
+              <h4>' . $MOVIE_TITLES[$title] . '</h4>
+              <ul class="collapsible" data-collapsible="expandable">';
 
             foreach ($showing as $s) {
               echo '
-              <li>
-                <div class="collapsible-header">' . date('g:i a', strtotime($s->time)) . '</div>
-                <div class="collapsible-body">
-                  <p>' . date('l, F d', strtotime($s->time)) . '<br />
-                  Theater: ' . $s->theater . '<br />
-                  Open seats: ' . $s->open_seats . '
-                  </p>
-                  <a href="order.php?showing=' . $s->ID . '" class="secondary-content">
-                    <i class="material-icons">keyboard_arrow_right</i>
-                  </a>
-                </div>
-              </li>';
+                <li>
+                  <div class="collapsible-header">' . date('g:i a', strtotime($s->time)) . '</div>
+                  <div class="collapsible-body">
+                    <p>' . date('l, F d', strtotime($s->time)) . '<br />
+                    Theater: ' . $s->theater . '<br />
+                    Open seats: ' . $s->open_seats . '
+                    </p>
+                    <a href="order.php?showing=' . $s->ID . '" class="secondary-content">
+                      <i class="material-icons">keyboard_arrow_right</i>
+                    </a>
+                  </div>
+                </li>';
             }
             echo '
-            </ul>';
+              </ul>
+            </div>';
           }
           echo '
           </div>';
