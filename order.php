@@ -73,8 +73,7 @@
 
         <div class="row">
           <div class="input-field col s12 m10 l8 offset-m1 offset-l2">
-            <input id="show" type="text" disabled value="Showtime: <?php echo $showID ?>" />
-            <input name="showID" type="hidden" disabled value="Showtime: <?php echo $showID ?>" />
+            <input id="show" name="showID"  type="text" disabled value="Showtime: <?php echo $showID ?>" />
             <input name="edit" type="hidden" disabled value=" <?php if($flag) {echo 1;} else {echo 0;} ?>"
             <label for="show">Selected showtime:</label>
           </div>
