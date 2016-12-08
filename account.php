@@ -3,7 +3,6 @@
   include('includes/check_account.php');
 ?>
 
-
 <main>
   <div class="container">
     <div class="row">
@@ -32,7 +31,5 @@
     </div>
   </div>
 </main>
-
-
 
 <?php include('includes/footer.php'); ?>
