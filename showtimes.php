@@ -22,19 +22,13 @@
       $exec_q = mysqli_query($dbc, $dates_query);
       if ($exec_q) {
         while ($date = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-          $addDate = $date['date'];
-          echo $addDate . "<br />";
-          array_push(
-            $dates,
-            date('Y-m-d', strtotime($addDate))
-          );
+          array_push($dates, $date['date']);
         }
       }
+      // build tabs to navigate between days
+    ?>
 
-      //print_r($dates);
-
-    // build tabs to navigate between days
-    ?><div class="row">
+    <div class="row">
       <div class="col s12">
         <ul class="tabs tabs-fixed-width">
           <?php
@@ -51,53 +45,46 @@
     <?php
       // if an ID was posted through, list showtimes for that movie for selected date.
       // otherwise, get showtimes for the next 7 days sorted by time
-      $date1 = $dates[0]; $date2 = $dates[6];
-
-      //print_r($dates);
-
-      $times_query = "SELECT showings.id, movie_id, showings.date, showings.time,
-                        theater_id, available_seats FROM showings
-                      WHERE showings.date between '$date1' and '$date2'";
-
-      if($flag) {
-         $times_query .= " AND movie_id = $movie";
-      }
-      $times_query .= "  ORDER BY showings.time ASC";
-
-      echo $times_query;
-
-      $results = array();
-      $exec_q = mysqli_query($dbc, $times_query);
-      if($exec_q) {
-
-        // load results to memory
-        while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
-          array_push($results, $time);
+      for ($i=1; $i<=7; $i++) {
+        $loop_date = $dates[$i-1];
+        $times_query = "SELECT showings.id, movie_id, showings.time, theater_id, available_seats FROM showings WHERE showings.date = '$loop_date'";
+        if($flag) {
+           $times_query .= " AND movie_id = $movie";
         }
+        $times_query .= "  ORDER BY showings.time ASC";
 
-        // iterate through cached rows, add array for each movie and add times to movie arrays
-        $movies = array();
-        foreach ($results as $time) {
-          $mov = $time['movie_id'];
-          $dat = $time['date'];
-          $tim = $time['time'];
-          $formatted_time = $dat . ' ' . $tim;
-          $the = $time['theater_id'];
-          $sea = $time['available_seats'];
-          $showID = $time['id'];
+        // echo $times_query;
 
-          if( !array_key_exists($mov, $movies)) {
-            $movies[$mov] = array();
+        $results = array();
+        $exec_q = mysqli_query($dbc, $times_query);
+        if($exec_q) {
+          // load results to memory
+          while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
+            array_push($results, $time);
           }
-          array_push($movies[$mov], new Showtime($formatted_time, $the, $sea, $showID));
-          //print_r($movies);
-        }
 
-        // save movies/showtimes to session data to use on other pages
-
-
-        for ($i=0; $i<7; $i++) {
           echo '<div id="day' . $i . '">';
+
+          // iterate through cached rows, add array for each movie and add times to movie arrays
+          $movies = array();
+          foreach ($results as $time) {
+            // $curr_movie = $time['movie_id'];
+
+            $mov = $time['movie_id'];
+            $dat = $loop_date;
+            $tim = $time['time'];
+            $formatted_time = $dat . ' ' . $tim;
+            $the = $time['theater_id'];
+            $sea = $time['available_seats'];
+            $showID = $time['id'];
+
+            if( !array_key_exists($mov, $movies)) {
+              $movies[$mov] = array();
+            }
+            array_push($movies[$mov], new Showtime($formatted_time, $the, $sea, $showID));
+            //print_r($movies);
+          }
+
           // spit out results for each movie
           foreach ($movies as $title => $showing) {
             echo '
@@ -120,13 +107,14 @@
                 </div>
               </li>';
             }
+
             echo '
-            </ul>
-          </div>';
+            </ul>';
           }
+          echo '</div>';
+        } else {
+          echo "No showtimes found!";
         }
-      } else {
-        echo "No showtimes found!";
       }
     ?>
   </div>
