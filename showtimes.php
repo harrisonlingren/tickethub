@@ -100,10 +100,11 @@
                   <p>' . date('l, F d', strtotime($s->time)) . '<br />
                   Theater: ' . $s->theater . '<br />
                   Open seats: ' . $s->open_seats . '
-                  </p>
                   <a href="order.php?showing=' . $s->ID . '" class="secondary-content">
                     <i class="material-icons large">add</i>
                   </a>
+                  </p>
+
                 </div>
               </li>';
             }
