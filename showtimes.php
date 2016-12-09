@@ -70,12 +70,12 @@
       $exec_q = mysqli_query($dbc, $times_query);
       if($exec_q) {
 
-        // init results array with results
+        // load results to memory
         while($time = mysqli_fetch_array($exec_q, MYSQLI_ASSOC)) {
           array_push($results, $time);
         }
 
-        // iterate through cached rows, add showtime array for each movie and add showings into each movie array
+        // iterate through cached rows, add array for each movie and add times to movie arrays
         $movies = array();
         foreach ($results as $time) {
           $mov = $time['movie_id'];
@@ -90,39 +90,16 @@
             $movies[$mov] = array();
           }
           array_push($movies[$mov], new Showtime($formatted_time, $the, $sea, $showID));
-        } //print_r($movies);
-
-        // build arrays for each set of showings and save to session
-        $dailyshowings = array();
-        if (!isset($_SESSION['showings'])) {
-          $_SESSION['showings'] = array();
+          //print_r($movies);
         }
 
-        for ($i=1; $i<=7; $i++) {
-          $dailyshowings[$i] = array_filter($movies, function($showing) {
-            return ($showing['date'] == $dates[$i-1]);
-          });
+        // save movies/showtimes to session data to use on other pages
 
-          if (!isset($_SESSION['showings'][$i])) {
-            $_SESSION['showings'][$i] = array();
-          }
 
-          $_SESSION['showings'][$i] = $dailyshowings[$i];
-
-          echo "<br /><b>" . ($showing['date'] == $dates[$i-1]) . "</b> <h3>Day $i Showings:</h3><hr />";
-          print_r($dailyshowings[$i]);
-        }
-
-        // echo "<h3>Daily showings:</h3><br />";
-        // print_r($dailyshowings);
-        // echo "<br /><hr /><br />";
-        // echo "<h3>Day 1 showings:</h3><br />";
-        // print_r($dailyshowings);
-        // echo "<br /><hr /><br />";
-
-        for ($i=1; $i<=7; $i++) {
-          echo '<div id=day' . $i . '>';
-          foreach ($dailyshowings[$i] as $title => $showing) {
+        for ($i=0; $i<7; $i++) {
+          echo '<div id="day' . $i . '">';
+          // spit out results for each movie
+          foreach ($movies as $title => $showing) {
             echo '
 
             <h4>' . $MOVIE_TITLES[$title] . '</h4>
@@ -144,12 +121,10 @@
               </li>';
             }
             echo '
-            </ul>';
-          }
-          echo '
+            </ul>
           </div>';
+          }
         }
-
       } else {
         echo "No showtimes found!";
       }
