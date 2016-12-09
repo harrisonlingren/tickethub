@@ -102,7 +102,7 @@
                   Open seats: ' . $s->open_seats . '
                   </p>
                   <a href="order.php?showing=' . $s->ID . '" class="secondary-content">
-                    <i class="material-icons large">keyboard_arrow_right</i>
+                    <i class="material-icons large">add</i>
                   </a>
                 </div>
               </li>';
