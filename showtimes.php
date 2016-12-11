@@ -100,8 +100,8 @@
                   <p>' . date('l, F d', strtotime($s->time)) . '<br />
                   Theater: ' . $s->theater . '<br />
                   Open seats: ' . $s->open_seats . '
-                  <a href="order.php?showing=' . $s->ID . '" class="secondary-content">
-                    <i class="material-icons large">add</i>
+                  <a href="order.php?showing=' . $s->ID . '" class="collapsible-action">
+                    <i class="material-icons large">add</i> Add to order
                   </a>
                   </p>
 
