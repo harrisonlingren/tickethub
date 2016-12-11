@@ -1,70 +1,80 @@
 <?php
-  include('incluides/header.php');
+  include('includes/header.php');
   include('includes/check_account.php');
-
-  // determine origin:
-  //  if POST, retrieve order data from submission, create order record, and reduce ticket count
-  if ( $_SERVER['REQUEST_METHOD'] = 'POST' && isset($_POST['showID']) && isset($_POST['tickets']) ) {
-    $showID = $_POST['showID'];
-    $tickets = $_POST['tickets'];
-    $check_edit = $_POST['checkEdit'];
-
-    // find amount of tickets available before new order / edit
-    $get_available_tix = "SELECT available_seats FROM showings where showtimes.id = $showID";
-    $exec_q = mysqli_query($dbc, $get_available_tix);
-    if ($exec_q) {
-      $availableTixA = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
-      $availableTix = $availableTixA['tickets'];
-    }
-
-    // check if editing, and create query and change in open tickets accordingly
-    if ($check_edit == 1) {
-      // find amount of tickets from original order
-      $get_original_tix = "SELECT tickets FROM orders where orders.showing_id = $showID";
-      $exec_q = mysqli_query($dbc, $get_original_tix);
-      if ($exec_q) {
-        $originalTixA = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
-        $originalTix = $originalTixA['tickets'];
-      }
-
-      $order_q = "UPDATE orders SET tickets='$tickets'";
-      $amountTixChanged = (((int) $originalTix) - ((int)($tickets)));
-    } else {
-      $order_q = "INSERT INTO orders (showing_id, tickets, user_id) VALUES ('$showID', '$tickets', '$userID')";
-      $amountTixChanged = (int) $tickets;
-    }
-
-    // create / update order
-    $exec_q = mysqli_query($dbc, $order_q);
-    if (!$exec_q) {
-      echo "Not today, sorry. Error was here: $order_q";
-    }
-
-    // update total tickets for showing
-    $update_tix = "UPDATE showtimes SET tickets='$amountTixChanged' WHERE showtimes.id='$showID'";
-    $exec_q = mysqli_query($dbc, $update_tix);
-    if (!$exec_q) {
-      echo "Not today, sorry. Error was here: $update_tix";
-    }
-
-
-  // if GET (edit), retrieve ID of order to be edited and load values into form. Specify whether editing or creating via hidden flag.
-  } else if (isset($_GET['edit'])) {
-    $orderID = $_GET['edit'];
-    $flag = true;
-
-    $get_order_q = "SELECT orders.id, tickets, showing_id FROM orders WHERE orders.id = '$orderID' and orders.user_id = '$userID'";
-    $count = count(mysqli_fetch_array($exec_q, MYSQLI_ASSOC));
-    echo $get_order_q;
-    if ($exec_q) {
-      $order = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
-      $showID = $order['showing_id'];
-      echo "<br />Grabbed showing ID: " . $order['showing_id'] . "<br />";
-    } else {
-      echo "\n<h5>Order #$orderID not found for user #$userID. \nQuery used: $get_order_q</h5> \nRecords found: $count";
-    }
-
-  // if GET (showing), retrieve showing ID to fill in showing field
-  }
-
 ?>
+
+<main>
+  <h3>Checkout</h3>
+  <div class="row card-panel">
+    <div class="col s12">
+      <h4>Thank you!</h4>
+      <p>Your order has been placed for the following movies:</p>
+    </div>
+    <div class="col s12">
+      <ul class="collection">
+        <?php
+          if (isset($_SESSION['cart'])) {
+            $order_queries = array();
+
+            foreach ($_SESSION['cart'] as $item) {
+              $showID = $item[0];
+              $qty = $item[1];
+
+              $details_q = "SELECT movies.title, showings.time, showings.date FROM showings
+                                      LEFT JOIN movies ON movies.id = showings.movie_id
+                                      WHERE showings.id = $showID";
+              $exec_q = mysqli_query($dbc, $details_q);
+              if ($exec_q) {
+
+                // check to make sure there are enough available seats
+                $available_amount = "SELECT showings.available_seats, showings.id FROM showings WHERE showings.id = $showID";
+                //echo $available_amount;
+                if ($qty <= $available_amount['available_seats']) {
+                  $results = mysqli_fetch_array($exec_q, MYSQLI_ASSOC);
+                  $showdate = date('D, F j', strtotime($results['date']));
+                  $showtime = date('g:i a', strtotime($results['time']));
+                  echo '
+                  <li class="collection-item">
+                    <div>
+                      <b>Movie</b>: ' . $results['title'] . '<br /><b>Date</b>: ' . $showdate . ', ' . $showtime . '<br /><b>Tickets</b>: ' . $item[1] . '
+                    </div>
+                  </li>';
+
+                  array_push($order_queries, "INSERT INTO orders (user_id, showing_id, tickets) VALUES ('$userID', '$item[0]', '$item[1]')");
+                } else {
+                  echo '
+                  <li class="collection-item">
+                    <div>
+                      ERROR: Not enough seats available for:<br /><b>' . $results['title'] . '</b> on ' . $showdate . ' at ' . $showtime . '
+                    </div>
+                  </li>';
+                }
+              } else {
+                echo '<li class="collection-item">Could not fetch details for item: $item[0]</li>';
+              }
+            }
+
+            foreach ($order_queries as $query) {
+              $exec_q = mysqli_query($dbc, $query);
+              if (!$exec_q) {
+                echo "Issue with query: " . $query . "<br />";
+              } else {
+                echo "Executing: " . $query . "<br />";
+              }
+            }
+
+          } else {
+            echo "<h5>There's nothing in your cart! Add some movies and try again.</h5>";
+          }
+        ?>
+        <li class="collection-item">
+          <div class="row">
+            <div class="col s12">
+              <a href="movies.php"><button class="btn orange accent-2 waves-effect waves-light center-div">Continue Shopping</button></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>

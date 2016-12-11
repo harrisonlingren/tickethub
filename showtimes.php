@@ -97,14 +97,25 @@
               <li>
                 <div class="collapsible-header">' . date('g:i a', strtotime($s->time)) . '</div>
                 <div class="collapsible-body">
-                  <p>' . date('l, F d', strtotime($s->time)) . '<br />
-                  Theater: ' . $s->theater . '<br />
-                  Open seats: ' . $s->open_seats . '
-                  <a href="order.php?showing=' . $s->ID . '" class="collapsible-action">
-                    <i class="material-icons large">add</i> Add to order
-                  </a>
-                  </p>
+                  <div class="row">
+                    <div class="col s8">
+                      <p>' . date('l, F d', strtotime($s->time)) . '<br />
+                        Theater: ' . $s->theater . '<br />
+                        Open seats: ' . $s->open_seats . '
+                      </p>
+                    </div>
+                    <div class="col s4 collapsible-action">
+                      <form action="cart.php?showing=' . $s->ID . '" method="POST">
+                        <div class="col s6">
+                          <input type="number" value="1" name="ticketsQty" id="ticketsQty" />
+                        </div>
+                        <div class="col s6">
+                          <button class="waves-effect waves-light btn-floating btn orange accent-2" type="submit"><i class="material-icons">add</i></button>
+                        </div>
+                      </form>
+                    </div>
 
+                  </div>
                 </div>
               </li>';
             }
