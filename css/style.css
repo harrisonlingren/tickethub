@@ -48,3 +48,7 @@ footer.page-footer {
   text-align: center;
   color: #ee6e73;
 }
+
+.collapsible-action {
+  margin-top: 20px;
+}

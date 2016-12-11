@@ -22,7 +22,7 @@
       </div>
       <div class="col s12 m6 ">
         <div class="card-panel">
-          <a href="my-info.php">
+          <a href="account_info.php">
             <i class="material-icons large orange-text accent-2">person</i>
             <h4 class="grey-text">Update account</h4>
           </a>

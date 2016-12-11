@@ -13,7 +13,9 @@
 
 <main>
   <div class="container">
-    <h3>Available Showtimes</h3>
+    <div class="row">
+      <h3>Available Showtimes</h3>
+    </div>
 
     <?php
       // initialize array of upcoming dates
@@ -98,13 +100,13 @@
                 <div class="collapsible-header">' . date('g:i a', strtotime($s->time)) . '</div>
                 <div class="collapsible-body">
                   <div class="row">
-                    <div class="col s8">
+                    <div class="col s8 m10 l10">
                       <p>' . date('l, F d', strtotime($s->time)) . '<br />
                         Theater: ' . $s->theater . '<br />
                         Open seats: ' . $s->open_seats . '
                       </p>
                     </div>
-                    <div class="col s4 collapsible-action">
+                    <div class="col s4 m2 l2 collapsible-action">
                       <form action="cart.php?showing=' . $s->ID . '" method="POST">
                         <div class="col s6">
                           <input type="number" value="1" name="ticketsQty" id="ticketsQty" />

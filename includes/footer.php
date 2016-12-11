@@ -33,6 +33,7 @@
         $('.modal').modal();
         $('ul.tabs').tabs();
         $('li.tab').first().addClass('active');
+        $('select').material_select();
       });
     </script>
 
