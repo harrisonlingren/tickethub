@@ -130,6 +130,17 @@
           echo "No showtimes found!";
         }
       }
+
+      if (isset($_SESSION['cart'])) {
+        echo '
+        <div class="fixed-action-btn">
+          <a class="btn-floating btn-large orange accent-2 toolbar" href="cart.php">
+            <i class="large material-icons">shopping_cart</i>
+          </a>
+        </div>
+        ';
+      }
+
     ?>
   </div>
 </main>

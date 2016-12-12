@@ -25,7 +25,7 @@
     $flag = false;
     $removeID = $_GET['remove'];
     array_splice($_SESSION['cart'], $removeID, 1);
-    echo "removed element $removeID";
+    //echo "removed element $removeID";
   } else {$flag = false;}
   //echo "<p>" . print_r($_GET) . "</p><p> " . print_r($_POST) . "</p>";
 ?>
@@ -41,7 +41,7 @@
           $showtime = date('g:i a', strtotime($results['time']));
           $movie = $results['title'];
           echo "<p>
-            <b>$ticketsQty</b> tickets for <b>$movie</b> on <b>$showdate</b> at <b>$showtime</b>
+            <b>$ticketsQty</b> ticket(s) for <b>$movie</b> on <b>$showdate</b> at <b>$showtime</b>
           </p>";
         }
       ?>
