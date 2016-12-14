@@ -36,6 +36,6 @@
         $('select').material_select();
       });
     </script>
-    <?php include('anayltics.php'); ?>
+    <?php include('analytics.php'); ?>
   </body>
 </html>
